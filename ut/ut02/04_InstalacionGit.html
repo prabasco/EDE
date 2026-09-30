@@ -1082,7 +1082,7 @@
 
 
 <h1 id="instalacion-de-git">Instalación de Git<a class="headerlink" href="#instalacion-de-git" title="Permanent link">¶</a></h1>
-<p>La instalación de Git es muy sencilla, de hecho, en la mayoría de las ocasiones se trata simplemente de instalarlo con el típico programa de instalación de software.</p>
+<p>La instalación de [Git] (https://git-scm.com/) es muy sencilla, de hecho, en la mayoría de las ocasiones se trata simplemente de instalarlo con el típico programa de instalación de software.</p>
 <div class="admonition danger">
 <p class="admonition-title">Antes de empezar</p>
 <p>Importante mencionar que el instalador de Git se debe descargar de la página oficial de Git. A partir de ahí, el proceso depende del sistema operativo con el que estemos trabajando. Para los sistemas más importantes es el siguiente.</p>
@@ -1112,15 +1112,30 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>git config --global user.name "Tu nombre"
 </span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span>git config --global user.email "tu_email@example.com"
 </span></code></pre></div>
+<p>Para verificar la configuración inicial debemos lanzar los comandos siguientes:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>git config --global user.name
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>git config --global user.email
+</span></code></pre></div>
+<p>Para configurar el editor predeterminado en Windows lanzar el comando siguientes:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>#Visual Studio Code
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span>git config --global core.editor "code --wait"
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span>#IntelliJ IDEA
+</span><span id="__span-4-4"><span class="linenos" data-linenos="4 "></span>git config --global core.editor "idea --wait"
+</span><span id="__span-4-5"><span class="linenos" data-linenos="5 "></span>#Notepad
+</span><span id="__span-4-6"><span class="linenos" data-linenos="6 "></span>git config --global core.editor "notepad"
+</span></code></pre></div>
+<p>Para comprobar el editor predeterminado en Windows lanzar el comando siguientes:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>git config --global core.editor
+</span></code></pre></div>
 <h2 id="creacion-de-un-repositorio">Creación de un repositorio<a class="headerlink" href="#creacion-de-un-repositorio" title="Permanent link">¶</a></h2>
 <p>Para crear un repositorio Git desde cero, debemos partir de una carpeta vacía. Es por ello que mediante el terminal llegaremos al directorio que queramos. Estando situados en ella con el terminal de línea de comandos, se tiene que lanzar el comando:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>git init
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span>git init
 </span></code></pre></div>
 <p>Eso hará que se cree dentro la subcarpeta <code>.git</code> y que la carpeta donde nos encontramos se convierta por tanto en un repositorio Git, pasando a estar controlada por el sistema de control de versiones.</p>
 <p>Si deseas empezar a controlar versiones de archivos existentes (a diferencia de un directorio vacío), probablemente deberías comenzar el seguimiento de esos archivos y hacer una confirmación inicial. Puedes conseguirlo con unos pocos comandos git add para especificar qué archivos quieres controlar, seguidos de un git commit para confirmar los cambios:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>git add *
-</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span>git add LICENSE
-</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span>git commit -m 'initial project version'
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>git add *
+</span><span id="__span-7-2"><span class="linenos" data-linenos="2 "></span>git add LICENSE
+</span><span id="__span-7-3"><span class="linenos" data-linenos="3 "></span>git commit -m 'initial project version'
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Información sobre las licencias</p>
