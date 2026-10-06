@@ -759,6 +759,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#ciclo-de-vida-de-un-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ciclo de vida de un repositorio
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fase-1-working-directory" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -766,6 +777,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Fase 1: Working Directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivos-modificados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archivos modificados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -778,35 +806,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Fase 2: Staging Area">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-un-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear un commit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#fase-3-git-repository" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fase 3: Git repository
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ciclo-de-vida-de-un-repositorio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ciclo de vida de un repositorio
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#actividades" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Actividades
+        Fase 3: Git Repository
       
     </span>
   </a>
@@ -1071,34 +1094,332 @@
 
 
 <h1 id="fases-de-un-repositorio">Fases de un repositorio<a class="headerlink" href="#fases-de-un-repositorio" title="Permanent link">¶</a></h1>
-<p>Ahora que sabemos cómo se crea un repositorio, es importante conocer las fases por las que pasa todo repositorio. En concreto pasa por tres fases:</p>
+<p>Ahora que sabemos cómo se crea un repositorio, es importante conocer las diferentes áreas por las que pueden pasar los cambios realizados en nuestros archivos.</p>
+<p>En Git podemos distinguir principalmente tres áreas:</p>
 <ul>
-<li><em>Working Directory</em></li>
-<li><em>Staging Area</em></li>
-<li><em>Git Repository</em></li>
+<li><strong>Working Directory</strong> (directorio de trabajo).</li>
+<li><strong>Staging Area</strong> (área de preparación o índice).</li>
+<li><strong>Git Repository</strong> (repositorio local).</li>
 </ul>
-<p>Cada fase se identifica con un estado:</p>
+<p>Los archivos pueden encontrarse en diferentes estados:</p>
 <ul>
-<li><em>Modified</em></li>
-<li><em>Staged</em></li>
-<li><em>Commited</em></li>
+<li><strong>Untracked</strong>: archivo que Git todavía no está siguiendo.</li>
+<li><strong>Modified</strong>: archivo que ha sido modificado.</li>
+<li><strong>Staged</strong>: archivo preparado para ser incluido en el próximo commit.</li>
+<li><strong>Committed</strong>: cambios almacenados en el repositorio local.</li>
 </ul>
-<h2 id="fase-1-working-directory">Fase 1: <em>Working Directory</em><a class="headerlink" href="#fase-1-working-directory" title="Permanent link">¶</a></h2>
-<p>Aquí es donde podemos hacer cualquier cambio y no afectar nuestro repositorio en lo absoluto. En cuanto modificamos algo de nuestro código, éste tiene status de <em>modified</em>. Si ejecutamos el comando <code>git status</code>, nos mostrará qué archivos han sido modificados (o creados).</p>
-<p>Una vez que hemos hecho los cambios necesarios, pasamos nuestros archivos al <em>staging area</em> con el comando <code>git add</code>. Cuando pasas el código de <em>Working Directory</em> a <em>Staging Area</em>, cambias el estado del código de <em>modified</em> a <em>staged</em>.</p>
-<h2 id="fase-2-staging-area">Fase 2: <em>Staging Area</em><a class="headerlink" href="#fase-2-staging-area" title="Permanent link">¶</a></h2>
-<p>Ws donde le podemos dar nombre a nuestra nueva versión. Y crear una “copia” de cómo quedaría nuestro repositorio en producción. Para pasar nuestro código de <code>staging</code> area al <em>Git Repository</em> (todavía no se publica el código en Github), escribimos el siguiente comando:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>git commit -m 'Mensaje de la confirmación'
-</span></code></pre></div>
-<p>Nota que cuando haces el <em>commit</em> el código pasa de estado <em>staged</em> a <em>commited</em>.</p>
-<h2 id="fase-3-git-repository">Fase 3: <em>Git repository</em><a class="headerlink" href="#fase-3-git-repository" title="Permanent link">¶</a></h2>
-<p>Una vez que el código está confirmado, <em>committed</em>, ya está listo para sincronizarse con el servidor de Git. Para hacer esto, utilizamos <code>git push</code>.</p>
-<p>Si estás trabajando en un repositorio con varias personas en algún momento vas a querer descargar las cosas que tus compañeros agreguen o modifiquen. Para eso ejecutamos <code>git pull origin main</code>.</p>
 <h2 id="ciclo-de-vida-de-un-repositorio">Ciclo de vida de un repositorio<a class="headerlink" href="#ciclo-de-vida-de-un-repositorio" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut02/ut02_5.png" data-desc-position="bottom"><img alt="Ciclo de vida de un repositorio" src="../../img/ut02/ut02_5.png"></a>
-/// caption
-Ciclo de vida de un repositorio
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut02/ut02_5.png" data-desc-position="bottom"><img alt="Ciclo de vida de un repositorio" src="../../img/ut02/ut02_5.png"></a></p>
+<p>/// caption
+    Ciclo de vida de un repositorio
 ///</p>
+<h2 id="fase-1-working-directory">Fase 1: <em>Working Directory</em><a class="headerlink" href="#fase-1-working-directory" title="Permanent link">¶</a></h2>
+<p>El <strong>Working Directory</strong> o <strong>directorio de trabajo</strong> contiene los archivos con los que estamos trabajando.</p>
+<p>Aquí podemos crear, modificar o eliminar archivos sin que esos cambios formen parte todavía de un commit.</p>
+<p>Por ejemplo, supongamos que tenemos el fichero:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>git.html
+</span></code></pre></div>
+<p>con el siguiente contenido:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>Hola Git
+</span></code></pre></div>
+<p>Podemos consultar el estado del repositorio mediante:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>status
+</span></code></pre></div>
+<p>Si <code>git.html</code> todavía no está siendo controlado por Git, aparecerá como:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>Untracked files:
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>    git.html
+</span></code></pre></div>
+<p>El estado <strong>untracked</strong> indica que el archivo existe en nuestro directorio de trabajo, pero Git todavía no realiza su seguimiento.</p>
+<p>Para comenzar a controlar el archivo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>git.html
+</span></code></pre></div>
+<p>También podemos añadir todos los cambios:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>.
+</span></code></pre></div>
+<p>El archivo pasa al <strong>Staging Area</strong>.</p>
+<h3 id="archivos-modificados">Archivos modificados<a class="headerlink" href="#archivos-modificados" title="Permanent link">¶</a></h3>
+<p>Supongamos ahora que <code>git.html</code> ya está siendo controlado por Git y modificamos su contenido:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span>Hola Git
+</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span>Nombre Alumno
+</span></code></pre></div>
+<p>Al ejecutar:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>status
+</span></code></pre></div>
+<p>Git indicará que el archivo ha sido modificado:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span>modified: git.html
+</span></code></pre></div>
+<p>El archivo se encuentra en estado <strong>modified</strong>.</p>
+<p>Para preparar esta modificación para el próximo commit:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>git.html
+</span></code></pre></div>
+<p>El cambio pasa del <strong>Working Directory</strong> al <strong>Staging Area</strong>.</p>
+<h2 id="fase-2-staging-area">Fase 2: <em>Staging Area</em><a class="headerlink" href="#fase-2-staging-area" title="Permanent link">¶</a></h2>
+<p>El <strong>Staging Area</strong>, también denominado <strong>área de preparación</strong> o <strong>índice</strong>, contiene los cambios que queremos incluir en el próximo commit.</p>
+<p>El comando utilizado para añadir cambios al staging es:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add
+</span></code></pre></div>
+<p>Por ejemplo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>git.html
+</span></code></pre></div>
+<p>O para añadir todos los cambios:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>.
+</span></code></pre></div>
+<p>Podemos comprobar qué archivos están preparados mediante:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>status
+</span></code></pre></div>
+<p>Git mostrará algo similar a:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span>Changes to be committed:
+</span><span id="__span-14-2"><span class="linenos" data-linenos="2 "></span>
+</span><span id="__span-14-3"><span class="linenos" data-linenos="3 "></span>    modified: git.html
+</span></code></pre></div>
+<p>Esto significa que la modificación de <code>git.html</code> está preparada para formar parte del siguiente commit.</p>
+<div class="admonition important">
+<p class="admonition-title">El staging permite seleccionar los cambios</p>
+<p>No es obligatorio incluir todos los archivos modificados en un commit.</p>
+<p>Podemos decidir qué archivos queremos preparar utilizando <code>git add</code>.</p>
+</div>
+<p>Por ejemplo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><span class="linenos" data-linenos="1 "></span>git.html       modified
+</span><span id="__span-15-2"><span class="linenos" data-linenos="2 "></span>index.html     modified
+</span><span id="__span-15-3"><span class="linenos" data-linenos="3 "></span>README.md      modified
+</span></code></pre></div>
+<p>Podemos preparar únicamente:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>git.html
+</span><span id="__span-16-2"><span class="linenos" data-linenos="2 "></span>git<span class="w"> </span>add<span class="w"> </span>README.md
+</span></code></pre></div>
+<p>El siguiente commit incluirá los cambios preparados de <code>git.html</code> y <code>README.md</code>, pero no los cambios de <code>index.html</code>.</p>
+<h3 id="crear-un-commit">Crear un commit<a class="headerlink" href="#crear-un-commit" title="Permanent link">¶</a></h3>
+<p>Una vez preparados los cambios, podemos crear una nueva confirmación:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Añadidos datos personales"</span>
+</span></code></pre></div>
+<p>El comando <code>git commit</code> almacena en el repositorio local los cambios que se encuentran en el <strong>Staging Area</strong>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><span class="linenos" data-linenos="1 "></span>Working Directory
+</span><span id="__span-18-2"><span class="linenos" data-linenos="2 "></span>       │
+</span><span id="__span-18-3"><span class="linenos" data-linenos="3 "></span>       │ git add
+</span><span id="__span-18-4"><span class="linenos" data-linenos="4 "></span>       ▼
+</span><span id="__span-18-5"><span class="linenos" data-linenos="5 "></span>Staging Area
+</span><span id="__span-18-6"><span class="linenos" data-linenos="6 "></span>       │
+</span><span id="__span-18-7"><span class="linenos" data-linenos="7 "></span>       │ git commit
+</span><span id="__span-18-8"><span class="linenos" data-linenos="8 "></span>       ▼
+</span><span id="__span-18-9"><span class="linenos" data-linenos="9 "></span>Git Repository
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">git commit no guarda necesariamente todos los cambios</p>
+<p><code>git commit</code> confirma los cambios que se encuentran en el <strong>Staging Area</strong>.</p>
+<p>Si modificamos un archivo después de ejecutar <code>git add</code>, esa nueva modificación no formará parte del commit hasta que volvamos a ejecutar <code>git add</code>.</p>
+</div>
+<h2 id="fase-3-git-repository">Fase 3: <em>Git Repository</em><a class="headerlink" href="#fase-3-git-repository" title="Permanent link">¶</a></h2>
+<p>El <strong>Git Repository</strong> es el repositorio local donde Git almacena el historial de commits del proyecto.</p>
+<p>Cuando ejecutamos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Añadidos datos personales"</span>
+</span></code></pre></div>
+<p>los cambios preparados pasan del <strong>Staging Area</strong> al <strong>repositorio local</strong>.</p>
+<p>El estado de esos cambios pasa a ser <strong>committed</strong>.</p>
+<p>Podemos consultar los commits realizados mediante:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>log
+</span></code></pre></div>
+<p>Una versión resumida:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>log<span class="w"> </span>--oneline
+</span></code></pre></div>
+<p>Por ejemplo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><span class="linenos" data-linenos="1 "></span>a84b21f Añadidos datos personales
+</span><span id="__span-22-2"><span class="linenos" data-linenos="2 "></span>91c48da Creado git.html
+</span></code></pre></div>
+<p>Cada commit representa un estado concreto del proyecto y tiene un identificador único.</p>
+<div class="admonition note">
+<p class="admonition-title">Repositorio local y GitHub no son lo mismo</p>
+<p>Realizar un <code>git commit</code> no publica los cambios en GitHub.</p>
+<p>Los commits se almacenan inicialmente en el <strong>repositorio Git local</strong> del ordenador.</p>
+</div>
+<h1 id="descartar-cambios-con-git-restore">Descartar cambios con <code>git restore</code><a class="headerlink" href="#descartar-cambios-con-git-restore" title="Permanent link">¶</a></h1>
+<p>Git proporciona el comando:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>restore
+</span></code></pre></div>
+<p>para restaurar archivos y descartar determinados cambios.</p>
+<p>Su comportamiento depende de dónde se encuentren los cambios.</p>
+<h2 id="descartar-cambios-del-working-directory">Descartar cambios del Working Directory<a class="headerlink" href="#descartar-cambios-del-working-directory" title="Permanent link">¶</a></h2>
+<p>Supongamos que <code>git.html</code> contiene:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-24-1"><span class="linenos" data-linenos="1 "></span>Hola Git
+</span></code></pre></div>
+<p>Modificamos el fichero:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-25-1"><span class="linenos" data-linenos="1 "></span>Hola Git
+</span><span id="__span-25-2"><span class="linenos" data-linenos="2 "></span>Nombre Alumno
+</span></code></pre></div>
+<p>Si todavía <strong>no hemos ejecutado <code>git add</code></strong>, podemos descartar esta modificación mediante:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>restore<span class="w"> </span>git.html
+</span></code></pre></div>
+<p>El archivo volverá a su contenido anterior:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-27-1"><span class="linenos" data-linenos="1 "></span>Hola Git
+</span></code></pre></div>
+<p>El flujo sería:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><span class="linenos" data-linenos="1 "></span>          modificamos
+</span><span id="__span-28-2"><span class="linenos" data-linenos="2 "></span>              │
+</span><span id="__span-28-3"><span class="linenos" data-linenos="3 "></span>              ▼
+</span><span id="__span-28-4"><span class="linenos" data-linenos="4 "></span>       Working Directory
+</span><span id="__span-28-5"><span class="linenos" data-linenos="5 "></span>              │
+</span><span id="__span-28-6"><span class="linenos" data-linenos="6 "></span>              │ git restore git.html
+</span><span id="__span-28-7"><span class="linenos" data-linenos="7 "></span>              ▼
+</span><span id="__span-28-8"><span class="linenos" data-linenos="8 "></span>      Se descartan cambios
+</span></code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Cambios descartados</p>
+<p><code>git restore archivo</code> descarta los cambios no preparados realizados sobre el archivo.</p>
+<p>Estos cambios pueden perderse, por lo que debemos utilizar este comando con precaución.</p>
+</div>
+<p>Para restaurar todos los archivos modificados del directorio actual:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>restore<span class="w"> </span>.
+</span></code></pre></div>
+<h2 id="quitar-un-archivo-del-staging-area">Quitar un archivo del Staging Area<a class="headerlink" href="#quitar-un-archivo-del-staging-area" title="Permanent link">¶</a></h2>
+<p>Supongamos que ejecutamos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>git.html
+</span></code></pre></div>
+<p>Ahora <code>git.html</code> está preparado para el próximo commit.</p>
+<p>Si queremos quitarlo del <strong>Staging Area</strong>, pero mantener las modificaciones en nuestro directorio de trabajo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>git.html
+</span></code></pre></div>
+<p>El archivo deja de estar preparado para el commit, pero <strong>no perdemos las modificaciones realizadas</strong>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><span class="linenos" data-linenos="1 "></span>Staging Area
+</span><span id="__span-32-2"><span class="linenos" data-linenos="2 "></span>     │
+</span><span id="__span-32-3"><span class="linenos" data-linenos="3 "></span>     │ git restore --staged git.html
+</span><span id="__span-32-4"><span class="linenos" data-linenos="4 "></span>     ▼
+</span><span id="__span-32-5"><span class="linenos" data-linenos="5 "></span>Working Directory
+</span></code></pre></div>
+<p>Después:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>status
+</span></code></pre></div>
+<p>volverá a mostrar el archivo como modificado.</p>
+<h3 id="diferencia-entre-restore-y-restore-staged">Diferencia entre <code>restore</code> y <code>restore --staged</code><a class="headerlink" href="#diferencia-entre-restore-y-restore-staged" title="Permanent link">¶</a></h3>
+<p>Es importante distinguir ambos comandos:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git restore archivo</code></td>
+<td>Descarta cambios del Working Directory</td>
+</tr>
+<tr>
+<td><code>git restore --staged archivo</code></td>
+<td>Quita el archivo del Staging Area pero conserva sus cambios</td>
+</tr>
+<tr>
+<td><code>git restore .</code></td>
+<td>Descarta los cambios no preparados de todos los archivos del directorio</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>restore<span class="w"> </span>git.html
+</span></code></pre></div>
+<p>significa:</p>
+<blockquote>
+<p>No quiero conservar las modificaciones realizadas en <code>git.html</code>.</p>
+</blockquote>
+<p>Mientras que:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>git.html
+</span></code></pre></div>
+<p>significa:</p>
+<blockquote>
+<p>No quiero incluir <code>git.html</code> en el próximo commit, pero quiero conservar sus modificaciones.</p>
+</blockquote>
+<h1 id="ejemplo-completo">Ejemplo completo<a class="headerlink" href="#ejemplo-completo" title="Permanent link">¶</a></h1>
+<p>Partimos de un repositorio Git que contiene:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><span class="linenos" data-linenos="1 "></span>git.html
+</span></code></pre></div>
+<p>Modificamos el archivo:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-37-1"><span class="linenos" data-linenos="1 "></span>Hola Git
+</span><span id="__span-37-2"><span class="linenos" data-linenos="2 "></span>Nombre Alumno
+</span></code></pre></div>
+<p>Comprobamos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-38-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>status
+</span></code></pre></div>
+<p>Preparamos el archivo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-39-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>git.html
+</span></code></pre></div>
+<p>Comprobamos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-40-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>status
+</span></code></pre></div>
+<p>Ahora está en el <strong>Staging Area</strong>.</p>
+<p>Si nos arrepentimos de haberlo preparado:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-41-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>restore<span class="w"> </span>--staged<span class="w"> </span>git.html
+</span></code></pre></div>
+<p>La modificación sigue existiendo, pero vuelve a estar únicamente en el <strong>Working Directory</strong>.</p>
+<p>Podemos volver a prepararla:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-42-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>git.html
+</span></code></pre></div>
+<p>Y finalmente crear el commit:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-43-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Añadido nombre"</span>
+</span></code></pre></div>
+<p>El proceso realizado ha sido:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><span class="linenos" data-linenos=" 1 "></span>git.html modificado
+</span><span id="__span-44-2"><span class="linenos" data-linenos=" 2 "></span>        │
+</span><span id="__span-44-3"><span class="linenos" data-linenos=" 3 "></span>        ▼
+</span><span id="__span-44-4"><span class="linenos" data-linenos=" 4 "></span>Working Directory
+</span><span id="__span-44-5"><span class="linenos" data-linenos=" 5 "></span>        │
+</span><span id="__span-44-6"><span class="linenos" data-linenos=" 6 "></span>        │ git add git.html
+</span><span id="__span-44-7"><span class="linenos" data-linenos=" 7 "></span>        ▼
+</span><span id="__span-44-8"><span class="linenos" data-linenos=" 8 "></span>Staging Area
+</span><span id="__span-44-9"><span class="linenos" data-linenos=" 9 "></span>        │
+</span><span id="__span-44-10"><span class="linenos" data-linenos="10 "></span>        │ git commit
+</span><span id="__span-44-11"><span class="linenos" data-linenos="11 "></span>        ▼
+</span><span id="__span-44-12"><span class="linenos" data-linenos="12 "></span>Git Repository
+</span></code></pre></div>
+<p>Mientras que para retroceder entre las dos primeras áreas:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><span class="linenos" data-linenos="1 "></span>Working Directory ◄──────── Staging Area
+</span><span id="__span-45-2"><span class="linenos" data-linenos="2 "></span>                         git restore --staged
+</span></code></pre></div>
+<p>y para descartar una modificación del directorio de trabajo:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><span class="linenos" data-linenos="1 "></span>Working Directory
+</span><span id="__span-46-2"><span class="linenos" data-linenos="2 "></span>        │
+</span><span id="__span-46-3"><span class="linenos" data-linenos="3 "></span>        │ git restore archivo
+</span><span id="__span-46-4"><span class="linenos" data-linenos="4 "></span>        ▼
+</span><span id="__span-46-5"><span class="linenos" data-linenos="5 "></span>Cambios descartados
+</span></code></pre></div>
+<h1 id="repositorio-remoto-github">Repositorio remoto: GitHub<a class="headerlink" href="#repositorio-remoto-github" title="Permanent link">¶</a></h1>
+<p>Una vez realizados los commits, podemos sincronizar nuestro repositorio local con un repositorio remoto como GitHub.</p>
+<p>Para enviar nuestros commits:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-47-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>push
+</span></code></pre></div>
+<p>La primera vez puede ser necesario indicar el remoto y la rama:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</span></code></pre></div>
+<p>El flujo completo será:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><span class="linenos" data-linenos=" 1 "></span>Working Directory
+</span><span id="__span-49-2"><span class="linenos" data-linenos=" 2 "></span>       │
+</span><span id="__span-49-3"><span class="linenos" data-linenos=" 3 "></span>       │ git add
+</span><span id="__span-49-4"><span class="linenos" data-linenos=" 4 "></span>       ▼
+</span><span id="__span-49-5"><span class="linenos" data-linenos=" 5 "></span>Staging Area
+</span><span id="__span-49-6"><span class="linenos" data-linenos=" 6 "></span>       │
+</span><span id="__span-49-7"><span class="linenos" data-linenos=" 7 "></span>       │ git commit
+</span><span id="__span-49-8"><span class="linenos" data-linenos=" 8 "></span>       ▼
+</span><span id="__span-49-9"><span class="linenos" data-linenos=" 9 "></span>Git Repository
+</span><span id="__span-49-10"><span class="linenos" data-linenos="10 "></span>       │
+</span><span id="__span-49-11"><span class="linenos" data-linenos="11 "></span>       │ git push
+</span><span id="__span-49-12"><span class="linenos" data-linenos="12 "></span>       ▼
+</span><span id="__span-49-13"><span class="linenos" data-linenos="13 "></span>GitHub
+</span></code></pre></div>
+<p>Para descargar e integrar cambios del repositorio remoto:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-50-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>pull
+</span></code></pre></div>
+<p>También podemos indicar explícitamente el remoto y la rama:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-51-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</span></code></pre></div>
+<p>Por tanto:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><span class="linenos" data-linenos="1 "></span>                git push
+</span><span id="__span-52-2"><span class="linenos" data-linenos="2 "></span>Git Repository ─────────────► GitHub
+</span><span id="__span-52-3"><span class="linenos" data-linenos="3 "></span>               ◄─────────────
+</span><span id="__span-52-4"><span class="linenos" data-linenos="4 "></span>                git pull
+</span></code></pre></div>
+<div class="admonition important">
+<p class="admonition-title">Git y GitHub</p>
+<p><strong>Git</strong> es el sistema de control de versiones.</p>
+<p><strong>GitHub</strong> es un servicio que permite alojar repositorios Git remotos.</p>
+<p>Podemos utilizar Git completamente en nuestro ordenador sin utilizar GitHub.</p>
+</div>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">¶</a></h2>
 <ul>
 <li>
