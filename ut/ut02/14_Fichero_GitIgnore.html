@@ -1,0 +1,1359 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/prabasco/EDE/ut/ut02/14_Fichero_GitIgnore.html">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>El archivo .gitignore en Git - Entornos de desarrollo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra_index.css">
+    
+      <link rel="stylesheet" href="../../css/extra_pd.css">
+    
+      <link rel="stylesheet" href="../../css/extra_tablasresumen.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#el-archivo-gitignore-en-git" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../index.html" title="Entornos de desarrollo" class="md-header__button md-logo" aria-label="Entornos de desarrollo" data-md-component="logo">
+      
+  <img src="../../img/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Entornos de desarrollo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              El archivo .gitignore en Git
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="orange" aria-label="Cambiar a modo oscuro" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="orange" aria-label="Cambiar a modo claro" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Entornos de desarrollo" class="md-nav__button md-logo" aria-label="Entornos de desarrollo" data-md-component="logo">
+      
+  <img src="../../img/logofp.png" alt="logo">
+
+    </a>
+    Entornos de desarrollo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 01. Concepto de programa, lenguajes e IDE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 01. Concepto de programa, lenguajes e IDE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/01_ProgramaInformatico.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Concepto de programa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/02_LenguajesProgramacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Lenguajes de programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/03_Clasificacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Clasificación de los lenguajes de programación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ut01/04_TiposCodigo.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Tipos de código
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 02.  Control de versiones
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 02.  Control de versiones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 02
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01_ControlVersiones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Concepto de control de vesiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_EstructuraVC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Estructuras de los sistemas de control de versiones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_Repositorio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Repositorio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04_InstalacionGit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Instalación de Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05_FasesRepositorio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Fases de un repositorio Git
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06_ClonadoRepositorio.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. Clonado de un repositorio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07_ConceptoBranch.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Concepto de branch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="08_Status.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08. Status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="09_Log.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09. Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10_PushPullFetch.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Push / Pull / Fetch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11_MecanismosActualizacion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Mecanismos de actualización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="12_GeneracionEjecutables.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Generación de ejecutables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="13_VentajasInconvenientes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Ventajas e inconvenientes del uso de IDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="14_ConfiguracionIDE.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Configuración de un IDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="el-archivo-gitignore-en-git">El archivo <code>.gitignore</code> en Git<a class="headerlink" href="#el-archivo-gitignore-en-git" title="Permanent link">¶</a></h1>
+<h2 id="que-es-gitignore">¿Qué es <code>.gitignore</code>?<a class="headerlink" href="#que-es-gitignore" title="Permanent link">¶</a></h2>
+<p>El archivo <strong><code>.gitignore</code></strong> permite indicar a Git qué archivos y carpetas debe <strong>ignorar</strong> al detectar archivos nuevos en un repositorio.</p>
+<p>Se utiliza para evitar que determinados archivos se incorporen al control de versiones, como por ejemplo:</p>
+<ul>
+<li><strong>Archivos temporales</strong> generados por el sistema operativo.</li>
+<li><strong>Archivos compilados</strong> (<code>.class</code>, <code>.exe</code>, etc.).</li>
+<li><strong>Carpetas generadas automáticamente</strong> por los entornos de desarrollo.</li>
+<li><strong>Archivos de configuración local</strong> que son diferentes en cada equipo.</li>
+<li><strong>Archivos con información sensible</strong>, como contraseñas o claves de acceso.</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p><code>.gitignore</code> solo afecta a los archivos que Git todavía <strong>no está siguiendo (untracked)</strong>.</p>
+<p>Si un archivo ya está registrado en el repositorio, añadirlo a <code>.gitignore</code> no hará que Git deje de seguirlo automáticamente.</p>
+</div>
+<h2 id="crear-un-archivo-gitignore">Crear un archivo <code>.gitignore</code><a class="headerlink" href="#crear-un-archivo-gitignore" title="Permanent link">¶</a></h2>
+<p>El archivo <code>.gitignore</code> se crea normalmente en la <strong>raíz del repositorio</strong>, al mismo nivel que la carpeta <code>.git</code>.</p>
+<p>Ejemplo de estructura:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span>MiProyecto/
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>│
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>├── .git/
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>├── .gitignore
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>├── README.md
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>├── src/
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>│   └── Main.java
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>├── bin/
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>│   └── Main.class
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>└── logs/
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>    └── errores.log
+</span></code></pre></div>
+<p>En Windows, desde la terminal de VS Code o PowerShell, podemos crearlo mediante:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="nb">New-Item</span> <span class="p">.</span><span class="n">gitignore</span> <span class="n">-ItemType</span> <span class="n">File</span>
+</span></code></pre></div>
+<p>Desde CMD:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>type nul &gt; .gitignore
+</span></code></pre></div>
+<p>También podemos crearlo directamente desde el explorador de archivos de VS Code.</p>
+<h2 id="sintaxis-del-archivo-gitignore">Sintaxis del archivo <code>.gitignore</code><a class="headerlink" href="#sintaxis-del-archivo-gitignore" title="Permanent link">¶</a></h2>
+<p>Dentro del archivo <code>.gitignore</code> escribimos los nombres o patrones de los archivos y carpetas que queremos ignorar.</p>
+<table>
+<thead>
+<tr>
+<th>Patrón</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>archivo.txt</code></td>
+<td>Ignora los archivos con ese nombre</td>
+</tr>
+<tr>
+<td><code>*.log</code></td>
+<td>Ignora todos los archivos con extensión <code>.log</code></td>
+</tr>
+<tr>
+<td><code>*.class</code></td>
+<td>Ignora los archivos compilados de Java</td>
+</tr>
+<tr>
+<td><code>bin/</code></td>
+<td>Ignora las carpetas llamadas <code>bin</code> y su contenido</td>
+</tr>
+<tr>
+<td><code>/temp/</code></td>
+<td>Ignora la carpeta <code>temp</code> situada en la raíz</td>
+</tr>
+<tr>
+<td><code>!importante.log</code></td>
+<td>Excepción: permite no ignorar ese archivo si las demás reglas lo permiten</td>
+</tr>
+<tr>
+<td><code># comentario</code></td>
+<td>Añade un comentario</td>
+</tr>
+<tr>
+<td><code>config?.txt</code></td>
+<td>Ignora archivos como <code>config1.txt</code> o <code>configA.txt</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Uso de comodines</p>
+<ul>
+<li><code>*</code> representa cero o más caracteres dentro de un nombre o componente de ruta.</li>
+<li><code>?</code> representa exactamente un carácter.</li>
+<li><code>**</code> permite definir patrones que abarcan varios niveles de directorios.</li>
+<li><code>!</code> permite establecer excepciones a las reglas de exclusión.</li>
+</ul>
+</div>
+<h3 id="ejemplo-de-gitignore-para-un-proyecto-java">Ejemplo de <code>.gitignore</code> para un proyecto Java<a class="headerlink" href="#ejemplo-de-gitignore-para-un-proyecto-java" title="Permanent link">¶</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span># Archivos compilados
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span>*.class
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>*.jar
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span># Carpetas de compilación
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span>bin/
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span>build/
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span>target/
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span>out/
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span># Archivos temporales
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span>*.tmp
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span>*.log
+</span><span id="__span-3-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-3-15"><span class="linenos" data-linenos="15 "></span># Configuración de IntelliJ IDEA
+</span><span id="__span-3-16"><span class="linenos" data-linenos="16 "></span>.idea/
+</span><span id="__span-3-17"><span class="linenos" data-linenos="17 "></span>*.iml
+</span><span id="__span-3-18"><span class="linenos" data-linenos="18 "></span>
+</span><span id="__span-3-19"><span class="linenos" data-linenos="19 "></span># Configuración local
+</span><span id="__span-3-20"><span class="linenos" data-linenos="20 "></span>.env
+</span></code></pre></div>
+<p>Con esta configuración, Git ignorará los archivos y directorios indicados siempre que todavía no estén bajo seguimiento.</p>
+<h2 id="ejemplo-practico-de-funcionamiento">Ejemplo práctico de funcionamiento<a class="headerlink" href="#ejemplo-practico-de-funcionamiento" title="Permanent link">¶</a></h2>
+<p>Vamos a crear un repositorio con varios archivos y comprobar cómo funciona <code>.gitignore</code>.</p>
+<h3 id="paso-1-crear-el-repositorio">Paso 1. Crear el repositorio<a class="headerlink" href="#paso-1-crear-el-repositorio" title="Permanent link">¶</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>mkdir<span class="w"> </span>ProyectoGit
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="nb">cd</span><span class="w"> </span>ProyectoGit
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span>git<span class="w"> </span>init
+</span></code></pre></div>
+<h3 id="paso-2-crear-archivos-y-carpetas">Paso 2. Crear archivos y carpetas<a class="headerlink" href="#paso-2-crear-archivos-y-carpetas" title="Permanent link">¶</a></h3>
+<p>Creamos la siguiente estructura:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>ProyectoGit/
+</span><span id="__span-5-2"><span class="linenos" data-linenos="2 "></span>│
+</span><span id="__span-5-3"><span class="linenos" data-linenos="3 "></span>├── .gitignore
+</span><span id="__span-5-4"><span class="linenos" data-linenos="4 "></span>├── README.md
+</span><span id="__span-5-5"><span class="linenos" data-linenos="5 "></span>├── Main.java
+</span><span id="__span-5-6"><span class="linenos" data-linenos="6 "></span>├── Main.class
+</span><span id="__span-5-7"><span class="linenos" data-linenos="7 "></span>├── errores.log
+</span><span id="__span-5-8"><span class="linenos" data-linenos="8 "></span>└── bin/
+</span><span id="__span-5-9"><span class="linenos" data-linenos="9 "></span>    └── Programa.class
+</span></code></pre></div>
+<h3 id="paso-3-configurar-gitignore">Paso 3. Configurar <code>.gitignore</code><a class="headerlink" href="#paso-3-configurar-gitignore" title="Permanent link">¶</a></h3>
+<p>Editamos el archivo <code>.gitignore</code> e introducimos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span># Ignorar archivos compilados
+</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span>*.class
+</span><span id="__span-6-3"><span class="linenos" data-linenos="3 "></span>
+</span><span id="__span-6-4"><span class="linenos" data-linenos="4 "></span># Ignorar archivos de registro
+</span><span id="__span-6-5"><span class="linenos" data-linenos="5 "></span>*.log
+</span><span id="__span-6-6"><span class="linenos" data-linenos="6 "></span>
+</span><span id="__span-6-7"><span class="linenos" data-linenos="7 "></span># Ignorar carpeta bin
+</span><span id="__span-6-8"><span class="linenos" data-linenos="8 "></span>bin/
+</span></code></pre></div>
+<h3 id="paso-4-consultar-el-estado-del-repositorio">Paso 4. Consultar el estado del repositorio<a class="headerlink" href="#paso-4-consultar-el-estado-del-repositorio" title="Permanent link">¶</a></h3>
+<p>Ejecutamos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>status
+</span></code></pre></div>
+<p>Git mostrará como archivos sin seguimiento:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span>Untracked files:
+</span><span id="__span-8-2"><span class="linenos" data-linenos="2 "></span>    .gitignore
+</span><span id="__span-8-3"><span class="linenos" data-linenos="3 "></span>    README.md
+</span><span id="__span-8-4"><span class="linenos" data-linenos="4 "></span>    Main.java
+</span></code></pre></div>
+<p>Los archivos <code>Main.class</code>, <code>errores.log</code> y la carpeta <code>bin/</code> no aparecerán porque coinciden con las reglas de <code>.gitignore</code>.</p>
+<h3 id="paso-5-anadir-los-archivos-al-area-de-preparacion">Paso 5. Añadir los archivos al área de preparación<a class="headerlink" href="#paso-5-anadir-los-archivos-al-area-de-preparacion" title="Permanent link">¶</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>.
+</span></code></pre></div>
+<p>Aunque utilicemos <code>git add .</code>, Git no añadirá los archivos ignorados.</p>
+<p>Podemos comprobarlo con:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>status
+</span></code></pre></div>
+<p>Resultado:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>Changes to be committed:
+</span><span id="__span-11-2"><span class="linenos" data-linenos="2 "></span>    new file:   .gitignore
+</span><span id="__span-11-3"><span class="linenos" data-linenos="3 "></span>    new file:   Main.java
+</span><span id="__span-11-4"><span class="linenos" data-linenos="4 "></span>    new file:   README.md
+</span></code></pre></div>
+<h3 id="paso-6-realizar-el-commit">Paso 6. Realizar el commit<a class="headerlink" href="#paso-6-realizar-el-commit" title="Permanent link">¶</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Primer commit con gitignore"</span>
+</span></code></pre></div>
+<p>Solo se almacenarán en el repositorio los archivos que no estén ignorados.</p>
+<div class="admonition tip">
+<p class="admonition-title">Recomendación</p>
+<p>El propio archivo <code>.gitignore</code> debe añadirse al repositorio mediante un commit, para que todos los desarrolladores compartan las mismas reglas de exclusión.</p>
+</div>
+<h2 id="que-ocurre-si-un-archivo-ya-esta-siendo-seguido-por-git">¿Qué ocurre si un archivo ya está siendo seguido por Git?<a class="headerlink" href="#que-ocurre-si-un-archivo-ya-esta-siendo-seguido-por-git" title="Permanent link">¶</a></h2>
+<p>Supongamos que hemos añadido previamente <code>errores.log</code> al repositorio:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>errores.log
+</span><span id="__span-13-2"><span class="linenos" data-linenos="2 "></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Añadir archivo de errores"</span>
+</span></code></pre></div>
+<p>Posteriormente añadimos esta regla a <code>.gitignore</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span>*.log
+</span></code></pre></div>
+<p><strong>Git continuará siguiendo <code>errores.log</code></strong>, porque ya formaba parte del repositorio.</p>
+<p>Para dejar de seguirlo sin eliminarlo de nuestro ordenador, ejecutamos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>errores.log
+</span></code></pre></div>
+<p>Después confirmamos el cambio:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>.gitignore
+</span><span id="__span-16-2"><span class="linenos" data-linenos="2 "></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Dejar de controlar archivos log"</span>
+</span></code></pre></div>
+<p>A partir de ese momento, <code>errores.log</code> permanecerá en nuestro directorio de trabajo, pero Git lo ignorará.</p>
+<div class="admonition warning">
+<p class="admonition-title">Atención</p>
+<ul>
+<li><code>git rm archivo</code> elimina el archivo del índice y del directorio de trabajo.</li>
+<li><code>git rm --cached archivo</code> lo elimina únicamente del índice de Git, conservándolo en el directorio de trabajo.</li>
+</ul>
+<p>El archivo seguirá existiendo en los commits anteriores del historial.</p>
+</div>
+<h2 id="comprobar-si-un-archivo-esta-siendo-ignorado">Comprobar si un archivo está siendo ignorado<a class="headerlink" href="#comprobar-si-un-archivo-esta-siendo-ignorado" title="Permanent link">¶</a></h2>
+<p>Podemos utilizar el comando:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>check-ignore<span class="w"> </span>-v<span class="w"> </span>nombreArchivo
+</span></code></pre></div>
+<p>Por ejemplo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>check-ignore<span class="w"> </span>-v<span class="w"> </span>errores.log
+</span></code></pre></div>
+<p>Resultado:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><span class="linenos" data-linenos="1 "></span>.gitignore:5:*.log    errores.log
+</span></code></pre></div>
+<p>Este resultado indica que el archivo está siendo ignorado por la regla <code>*.log</code>, situada en la línea 5 del archivo <code>.gitignore</code>.</p>
+<p>Para comprobar archivos ya seguidos por Git, podemos añadir la opción <code>--no-index</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>check-ignore<span class="w"> </span>--no-index<span class="w"> </span>-v<span class="w"> </span>errores.log
+</span></code></pre></div>
+<h2 id="plantillas-de-gitignore">Plantillas de <code>.gitignore</code><a class="headerlink" href="#plantillas-de-gitignore" title="Permanent link">¶</a></h2>
+<p>No es necesario escribir todas las reglas manualmente. GitHub dispone de plantillas preparadas para diferentes lenguajes de programación, sistemas operativos y entornos de desarrollo.</p>
+<p>Podemos consultar las plantillas oficiales en:</p>
+<p><a href="https://github.com/github/gitignore">Repositorio de plantillas gitignore de GitHub</a></p>
+<p>Al crear un repositorio en GitHub también podemos seleccionar una plantilla <code>.gitignore</code> apropiada para nuestro proyecto.</p>
+<h2 id="resumen-de-comandos">Resumen de comandos<a class="headerlink" href="#resumen-de-comandos" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git status</code></td>
+<td>Muestra los archivos nuevos, modificados y preparados</td>
+</tr>
+<tr>
+<td><code>git add .</code></td>
+<td>Añade los archivos no ignorados al área de preparación</td>
+</tr>
+<tr>
+<td><code>git check-ignore -v archivo</code></td>
+<td>Comprueba qué regla ignora un archivo no seguido</td>
+</tr>
+<tr>
+<td><code>git rm --cached archivo</code></td>
+<td>Deja de seguir un archivo sin borrarlo del disco</td>
+</tr>
+<tr>
+<td><code>git ls-files</code></td>
+<td>Muestra los archivos que Git está siguiendo</td>
+</tr>
+<tr>
+<td><code>git status --ignored</code></td>
+<td>Muestra también los archivos ignorados</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Recuerda</p>
+<ul>
+<li><code>.gitignore</code> indica qué archivos no deben incorporarse al seguimiento de Git.</li>
+<li>No elimina archivos del ordenador.</li>
+<li>No afecta automáticamente a los archivos que ya están siendo seguidos.</li>
+<li>Debe guardarse en el repositorio para compartir las reglas con el equipo.</li>
+<li>No elimina información sensible del historial de Git si ya se ha confirmado anteriormente.</li>
+</ul>
+</div>
+<!-- Resultados de Aprendizaje & Criterios de Evaluación -->
+<!-- Instrumentos de Evaluación -->
+<!-- Instrumentos de Calificación -->
+<!-- Tipo de actividades -->
+<!-- Otras abreviaciones -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2026-2027 Pablo Rabasco (by <a href="https://gines-lopez.github.io/" title="Web de Ginés López García" target="_blank" rel="noopener">Ginés López García</a>)
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/prabasco" target="_blank" rel="noopener" title="GitHub de Pablo Rabasco" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://prabasco.github.io" target="_blank" rel="noopener" title="Apuntes de Pablo Rabasco" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm32 104c0-13.3 10.7-24 24-24 137 0 248 111 248 248 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-110.5-89.5-200-200-200-13.3 0-24-10.7-24-24m0 96c0-13.3 10.7-24 24-24 83.9 0 152 68.1 152 152 0 13.3-10.7 24-24 24s-24-10.7-24-24c0-57.4-46.6-104-104-104-13.3 0-24-10.7-24-24m0 120a32 32 0 1 1 64 0 32 32 0 1 1-64 0"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:&lt;p.rabascorodriguez@edu.gva.es&gt;" target="_blank" rel="noopener" title="Correo electrónico de Pablo Rabasco" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["header.autohide", "toc.integrate", "navigation.indexes", "navigation.top", "navigation.tracking", "navigation.footer", "toc.follow", "content.tooltips", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
