@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/prabasco/EDE/ut/ut02/12_GeneracionEjecutables.html">
+        <link rel="canonical" href="https://github.com/prabasco/EDE/ut/ut02/11_Fichero_GitIgnore.html">
       
       
-        <link rel="prev" href="11_MecanismosActualizacion.html">
+        <link rel="prev" href="10_PushPullFetch.html">
       
       
-        <link rel="next" href="13_VentajasInconvenientes.html">
+        <link rel="next" href="12_MecanismosActualizacion.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>12. Generación de ejecutables - Entornos de desarrollo</title>
+        <title>11. Fichero .gitignore - Entornos de desarrollo</title>
       
     
     
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#uso-de-ide-en-la-generacion-de-ejecutables" class="md-skip">
+        <a href="#el-archivo-gitignore-en-git" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              12. Generación de ejecutables
+              11. Fichero .gitignore
             
           </span>
         </div>
@@ -866,34 +866,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="11_MecanismosActualizacion.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    11. Mecanismos de actualización
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -913,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    12. Generación de ejecutables
+    11. Fichero .gitignore
   
 
     
@@ -924,14 +896,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="12_GeneracionEjecutables.html" class="md-nav__link md-nav__link--active">
+      <a href="11_Fichero_GitIgnore.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    12. Generación de ejecutables
+    11. Fichero .gitignore
   
 
     
@@ -957,10 +929,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#ejemplo-practico" class="md-nav__link">
+  <a href="#que-es-gitignore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ejemplo práctico
+        ¿Qué es .gitignore?
       
     </span>
   </a>
@@ -968,10 +940,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comparativa-ide-vs-terminal-en-compilacion-y-ejecucion" class="md-nav__link">
+  <a href="#crear-un-archivo-gitignore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Comparativa: IDE vs Terminal en compilación y ejecución
+        Crear un archivo .gitignore
       
     </span>
   </a>
@@ -979,10 +951,154 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#idea-clave" class="md-nav__link">
+  <a href="#sintaxis-del-archivo-gitignore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Idea clave
+        Sintaxis del archivo .gitignore
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sintaxis del archivo .gitignore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-gitignore-para-un-proyecto-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo de .gitignore para un proyecto Java
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-practico-de-funcionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo práctico de funcionamiento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo práctico de funcionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-el-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 1. Crear el repositorio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-crear-archivos-y-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 2. Crear archivos y carpetas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-configurar-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 3. Configurar .gitignore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-consultar-el-estado-del-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 4. Consultar el estado del repositorio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-5-anadir-los-archivos-al-area-de-preparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 5. Añadir los archivos al área de preparación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-6-realizar-el-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 6. Realizar el commit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-ocurre-si-un-archivo-ya-esta-siendo-seguido-por-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué ocurre si un archivo ya está siendo seguido por Git?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprobar-si-un-archivo-esta-siendo-ignorado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprobar si un archivo está siendo ignorado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plantillas-de-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plantillas de .gitignore
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen de comandos
       
     </span>
   </a>
@@ -1005,14 +1121,14 @@
   
   
     <li class="md-nav__item">
-      <a href="13_VentajasInconvenientes.html" class="md-nav__link">
+      <a href="12_MecanismosActualizacion.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    13. Ventajas e inconvenientes del uso de IDE
+    12. Mecanismos de actualización
   
 
     
@@ -1033,14 +1149,42 @@
   
   
     <li class="md-nav__item">
-      <a href="14_Fichero_GitIgnore.html" class="md-nav__link">
+      <a href="13_GeneracionEjecutables.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    14. Fichero .gitignore
+    13. Generación de ejecutables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="14_VentajasInconvenientes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Ventajas e inconvenientes del uso de IDE
   
 
     
@@ -1078,71 +1222,271 @@
 
 
 
-<h1 id="uso-de-ide-en-la-generacion-de-ejecutables">Uso de IDE en la generación de ejecutables<a class="headerlink" href="#uso-de-ide-en-la-generacion-de-ejecutables" title="Permanent link">¶</a></h1>
-<p>El uso de <strong>IDE</strong> ha cambiado la forma de programar, ya que facilitan tanto la <strong>creación</strong> como la <strong>edición</strong> de programas.
-Basta con abrir el proyecto o archivo y comenzar a escribir o modificar el código necesario.</p>
-<p>La gran ventaja aparece a la hora de <strong>generar los ficheros ejecutables</strong> directamente desde el IDE.</p>
-<p><a href="../../img/ut02/ut02_4.png"><img alt="Run Java" src="../../img/ut02/ut02_4.png"></a></p>
-<h2 id="ejemplo-practico">Ejemplo práctico<a class="headerlink" href="#ejemplo-practico" title="Permanent link">¶</a></h2>
-<p>Un IDE nos permite generar ejecutables sin necesidad de usar la <strong>terminal</strong>.
-En <strong>Visual Studio Code</strong>, por ejemplo, basta con pulsar el botón <strong>“Run Java”</strong> y el programa se compila y ejecuta automáticamente.</p>
-<p>Esto supone un gran avance porque:
-- No necesitamos ejecutar manualmente los comandos en la terminal (ejemplo: <code>javac</code>).
-- El IDE se encarga del proceso de compilación.
-- Si ocurre algún error, el IDE lo muestra claramente en pantalla.</p>
-<h2 id="comparativa-ide-vs-terminal-en-compilacion-y-ejecucion">Comparativa: IDE vs Terminal en compilación y ejecución<a class="headerlink" href="#comparativa-ide-vs-terminal-en-compilacion-y-ejecucion" title="Permanent link">¶</a></h2>
+<h1 id="el-archivo-gitignore-en-git">El archivo <code>.gitignore</code> en Git<a class="headerlink" href="#el-archivo-gitignore-en-git" title="Permanent link">¶</a></h1>
+<h2 id="que-es-gitignore">¿Qué es <code>.gitignore</code>?<a class="headerlink" href="#que-es-gitignore" title="Permanent link">¶</a></h2>
+<p>El archivo <strong><code>.gitignore</code></strong> permite indicar a Git qué archivos y carpetas debe <strong>ignorar</strong> al detectar archivos nuevos en un repositorio.</p>
+<p>Se utiliza para evitar que determinados archivos se incorporen al control de versiones, como por ejemplo:</p>
+<ul>
+<li><strong>Archivos temporales</strong> generados por el sistema operativo.</li>
+<li><strong>Archivos compilados</strong> (<code>.class</code>, <code>.exe</code>, etc.).</li>
+<li><strong>Carpetas generadas automáticamente</strong> por los entornos de desarrollo.</li>
+<li><strong>Archivos de configuración local</strong> que son diferentes en cada equipo.</li>
+<li><strong>Archivos con información sensible</strong>, como contraseñas o claves de acceso.</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p><code>.gitignore</code> solo afecta a los archivos que Git todavía <strong>no está siguiendo (untracked)</strong>.</p>
+<p>Si un archivo ya está registrado en el repositorio, añadirlo a <code>.gitignore</code> no hará que Git deje de seguirlo automáticamente.</p>
+</div>
+<h2 id="crear-un-archivo-gitignore">Crear un archivo <code>.gitignore</code><a class="headerlink" href="#crear-un-archivo-gitignore" title="Permanent link">¶</a></h2>
+<p>El archivo <code>.gitignore</code> se crea normalmente en la <strong>raíz del repositorio</strong>, al mismo nivel que la carpeta <code>.git</code>.</p>
+<p>Ejemplo de estructura:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span>MiProyecto/
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>│
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>├── .git/
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>├── .gitignore
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>├── README.md
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>├── src/
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>│   └── Main.java
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>├── bin/
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>│   └── Main.class
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>└── logs/
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span>    └── errores.log
+</span></code></pre></div>
+<p>En Windows, desde la terminal de VS Code o PowerShell, podemos crearlo mediante:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span><span class="nb">New-Item</span> <span class="p">.</span><span class="n">gitignore</span> <span class="n">-ItemType</span> <span class="n">File</span>
+</span></code></pre></div>
+<p>Desde CMD:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>type nul &gt; .gitignore
+</span></code></pre></div>
+<p>También podemos crearlo directamente desde el explorador de archivos de VS Code.</p>
+<h2 id="sintaxis-del-archivo-gitignore">Sintaxis del archivo <code>.gitignore</code><a class="headerlink" href="#sintaxis-del-archivo-gitignore" title="Permanent link">¶</a></h2>
+<p>Dentro del archivo <code>.gitignore</code> escribimos los nombres o patrones de los archivos y carpetas que queremos ignorar.</p>
 <table>
 <thead>
 <tr>
-<th>Aspecto |</th>
-<th>Uso de IDE |</th>
-<th>Uso de Terminal |</th>
+<th>Patrón</th>
+<th>Significado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Facilidad de uso</strong> |</td>
-<td>Muy sencillo, basta con un botón (ej. <em>Run Java</em>). |</td>
-<td>Requiere escribir comandos manualmente. |</td>
+<td><code>archivo.txt</code></td>
+<td>Ignora los archivos con ese nombre</td>
 </tr>
 <tr>
-<td><strong>Velocidad</strong> |</td>
-<td>Rápido: automatiza compilación y ejecución. |</td>
-<td>Más lento: cada paso debe hacerse a mano. |</td>
+<td><code>*.log</code></td>
+<td>Ignora todos los archivos con extensión <code>.log</code></td>
 </tr>
 <tr>
-<td><strong>Gestión de errores</strong> |</td>
-<td>Muestra errores en el propio editor, con resaltado y ayuda. |</td>
-<td>Los errores aparecen en consola, hay que interpretarlos. |</td>
+<td><code>*.class</code></td>
+<td>Ignora los archivos compilados de Java</td>
 </tr>
 <tr>
-<td><strong>Aprendizaje</strong> |</td>
-<td>Permite centrarse en el código sin preocuparse por la compilación. |</td>
-<td>Ayuda a entender cómo funciona realmente el proceso. |</td>
+<td><code>bin/</code></td>
+<td>Ignora las carpetas llamadas <code>bin</code> y su contenido</td>
 </tr>
 <tr>
-<td><strong>Flexibilidad</strong> |</td>
-<td>Limitado a las opciones del IDE. |</td>
-<td>Total: se pueden usar parámetros y configuraciones avanzadas. |</td>
+<td><code>/temp/</code></td>
+<td>Ignora la carpeta <code>temp</code> situada en la raíz</td>
 </tr>
 <tr>
-<td><strong>Productividad</strong> |</td>
-<td>Alta, ideal para proyectos grandes o en equipo. |</td>
-<td>Menor, aunque útil en entornos simples. |</td>
+<td><code>!importante.log</code></td>
+<td>Excepción: permite no ignorar ese archivo si las demás reglas lo permiten</td>
 </tr>
 <tr>
-<td><strong>Consumo de recursos</strong> |</td>
-<td>Mayor, ya que el IDE integra muchas funciones. |</td>
-<td>Muy bajo, solo se necesita la terminal. |</td>
+<td><code># comentario</code></td>
+<td>Añade un comentario</td>
+</tr>
+<tr>
+<td><code>config?.txt</code></td>
+<td>Ignora archivos como <code>config1.txt</code> o <code>configA.txt</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="idea-clave">Idea clave<a class="headerlink" href="#idea-clave" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Uso de comodines</p>
 <ul>
-<li><strong>IDE</strong> → más cómodo, rápido y visual.</li>
-<li><strong>Terminal</strong> → más flexible, ligero y formativo.</li>
+<li><code>*</code> representa cero o más caracteres dentro de un nombre o componente de ruta.</li>
+<li><code>?</code> representa exactamente un carácter.</li>
+<li><code>**</code> permite definir patrones que abarcan varios niveles de directorios.</li>
+<li><code>!</code> permite establecer excepciones a las reglas de exclusión.</li>
 </ul>
-<p>Lo ideal es <strong>aprender ambos</strong>: usar el IDE para el trabajo diario y la terminal para comprender y controlar mejor lo que ocurre “detrás de escena”.</p>
+</div>
+<h3 id="ejemplo-de-gitignore-para-un-proyecto-java">Ejemplo de <code>.gitignore</code> para un proyecto Java<a class="headerlink" href="#ejemplo-de-gitignore-para-un-proyecto-java" title="Permanent link">¶</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos=" 1 "></span># Archivos compilados
+</span><span id="__span-3-2"><span class="linenos" data-linenos=" 2 "></span>*.class
+</span><span id="__span-3-3"><span class="linenos" data-linenos=" 3 "></span>*.jar
+</span><span id="__span-3-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-3-5"><span class="linenos" data-linenos=" 5 "></span># Carpetas de compilación
+</span><span id="__span-3-6"><span class="linenos" data-linenos=" 6 "></span>bin/
+</span><span id="__span-3-7"><span class="linenos" data-linenos=" 7 "></span>build/
+</span><span id="__span-3-8"><span class="linenos" data-linenos=" 8 "></span>target/
+</span><span id="__span-3-9"><span class="linenos" data-linenos=" 9 "></span>out/
+</span><span id="__span-3-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-3-11"><span class="linenos" data-linenos="11 "></span># Archivos temporales
+</span><span id="__span-3-12"><span class="linenos" data-linenos="12 "></span>*.tmp
+</span><span id="__span-3-13"><span class="linenos" data-linenos="13 "></span>*.log
+</span><span id="__span-3-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-3-15"><span class="linenos" data-linenos="15 "></span># Configuración de IntelliJ IDEA
+</span><span id="__span-3-16"><span class="linenos" data-linenos="16 "></span>.idea/
+</span><span id="__span-3-17"><span class="linenos" data-linenos="17 "></span>*.iml
+</span><span id="__span-3-18"><span class="linenos" data-linenos="18 "></span>
+</span><span id="__span-3-19"><span class="linenos" data-linenos="19 "></span># Configuración local
+</span><span id="__span-3-20"><span class="linenos" data-linenos="20 "></span>.env
+</span></code></pre></div>
+<p>Con esta configuración, Git ignorará los archivos y directorios indicados siempre que todavía no estén bajo seguimiento.</p>
+<h2 id="ejemplo-practico-de-funcionamiento">Ejemplo práctico de funcionamiento<a class="headerlink" href="#ejemplo-practico-de-funcionamiento" title="Permanent link">¶</a></h2>
+<p>Vamos a crear un repositorio con varios archivos y comprobar cómo funciona <code>.gitignore</code>.</p>
+<h3 id="paso-1-crear-el-repositorio">Paso 1. Crear el repositorio<a class="headerlink" href="#paso-1-crear-el-repositorio" title="Permanent link">¶</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>mkdir<span class="w"> </span>ProyectoGit
+</span><span id="__span-4-2"><span class="linenos" data-linenos="2 "></span><span class="nb">cd</span><span class="w"> </span>ProyectoGit
+</span><span id="__span-4-3"><span class="linenos" data-linenos="3 "></span>git<span class="w"> </span>init
+</span></code></pre></div>
+<h3 id="paso-2-crear-archivos-y-carpetas">Paso 2. Crear archivos y carpetas<a class="headerlink" href="#paso-2-crear-archivos-y-carpetas" title="Permanent link">¶</a></h3>
+<p>Creamos la siguiente estructura:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>ProyectoGit/
+</span><span id="__span-5-2"><span class="linenos" data-linenos="2 "></span>│
+</span><span id="__span-5-3"><span class="linenos" data-linenos="3 "></span>├── .gitignore
+</span><span id="__span-5-4"><span class="linenos" data-linenos="4 "></span>├── README.md
+</span><span id="__span-5-5"><span class="linenos" data-linenos="5 "></span>├── Main.java
+</span><span id="__span-5-6"><span class="linenos" data-linenos="6 "></span>├── Main.class
+</span><span id="__span-5-7"><span class="linenos" data-linenos="7 "></span>├── errores.log
+</span><span id="__span-5-8"><span class="linenos" data-linenos="8 "></span>└── bin/
+</span><span id="__span-5-9"><span class="linenos" data-linenos="9 "></span>    └── Programa.class
+</span></code></pre></div>
+<h3 id="paso-3-configurar-gitignore">Paso 3. Configurar <code>.gitignore</code><a class="headerlink" href="#paso-3-configurar-gitignore" title="Permanent link">¶</a></h3>
+<p>Editamos el archivo <code>.gitignore</code> e introducimos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span># Ignorar archivos compilados
+</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span>*.class
+</span><span id="__span-6-3"><span class="linenos" data-linenos="3 "></span>
+</span><span id="__span-6-4"><span class="linenos" data-linenos="4 "></span># Ignorar archivos de registro
+</span><span id="__span-6-5"><span class="linenos" data-linenos="5 "></span>*.log
+</span><span id="__span-6-6"><span class="linenos" data-linenos="6 "></span>
+</span><span id="__span-6-7"><span class="linenos" data-linenos="7 "></span># Ignorar carpeta bin
+</span><span id="__span-6-8"><span class="linenos" data-linenos="8 "></span>bin/
+</span></code></pre></div>
+<h3 id="paso-4-consultar-el-estado-del-repositorio">Paso 4. Consultar el estado del repositorio<a class="headerlink" href="#paso-4-consultar-el-estado-del-repositorio" title="Permanent link">¶</a></h3>
+<p>Ejecutamos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>status
+</span></code></pre></div>
+<p>Git mostrará como archivos sin seguimiento:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span>Untracked files:
+</span><span id="__span-8-2"><span class="linenos" data-linenos="2 "></span>    .gitignore
+</span><span id="__span-8-3"><span class="linenos" data-linenos="3 "></span>    README.md
+</span><span id="__span-8-4"><span class="linenos" data-linenos="4 "></span>    Main.java
+</span></code></pre></div>
+<p>Los archivos <code>Main.class</code>, <code>errores.log</code> y la carpeta <code>bin/</code> no aparecerán porque coinciden con las reglas de <code>.gitignore</code>.</p>
+<h3 id="paso-5-anadir-los-archivos-al-area-de-preparacion">Paso 5. Añadir los archivos al área de preparación<a class="headerlink" href="#paso-5-anadir-los-archivos-al-area-de-preparacion" title="Permanent link">¶</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>.
+</span></code></pre></div>
+<p>Aunque utilicemos <code>git add .</code>, Git no añadirá los archivos ignorados.</p>
+<p>Podemos comprobarlo con:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>status
+</span></code></pre></div>
+<p>Resultado:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>Changes to be committed:
+</span><span id="__span-11-2"><span class="linenos" data-linenos="2 "></span>    new file:   .gitignore
+</span><span id="__span-11-3"><span class="linenos" data-linenos="3 "></span>    new file:   Main.java
+</span><span id="__span-11-4"><span class="linenos" data-linenos="4 "></span>    new file:   README.md
+</span></code></pre></div>
+<h3 id="paso-6-realizar-el-commit">Paso 6. Realizar el commit<a class="headerlink" href="#paso-6-realizar-el-commit" title="Permanent link">¶</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Primer commit con gitignore"</span>
+</span></code></pre></div>
+<p>Solo se almacenarán en el repositorio los archivos que no estén ignorados.</p>
+<div class="admonition tip">
+<p class="admonition-title">Recomendación</p>
+<p>El propio archivo <code>.gitignore</code> debe añadirse al repositorio mediante un commit, para que todos los desarrolladores compartan las mismas reglas de exclusión.</p>
+</div>
+<h2 id="que-ocurre-si-un-archivo-ya-esta-siendo-seguido-por-git">¿Qué ocurre si un archivo ya está siendo seguido por Git?<a class="headerlink" href="#que-ocurre-si-un-archivo-ya-esta-siendo-seguido-por-git" title="Permanent link">¶</a></h2>
+<p>Supongamos que hemos añadido previamente <code>errores.log</code> al repositorio:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>errores.log
+</span><span id="__span-13-2"><span class="linenos" data-linenos="2 "></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Añadir archivo de errores"</span>
+</span></code></pre></div>
+<p>Posteriormente añadimos esta regla a <code>.gitignore</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span>*.log
+</span></code></pre></div>
+<p><strong>Git continuará siguiendo <code>errores.log</code></strong>, porque ya formaba parte del repositorio.</p>
+<p>Para dejar de seguirlo sin eliminarlo de nuestro ordenador, ejecutamos:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>errores.log
+</span></code></pre></div>
+<p>Después confirmamos el cambio:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>add<span class="w"> </span>.gitignore
+</span><span id="__span-16-2"><span class="linenos" data-linenos="2 "></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Dejar de controlar archivos log"</span>
+</span></code></pre></div>
+<p>A partir de ese momento, <code>errores.log</code> permanecerá en nuestro directorio de trabajo, pero Git lo ignorará.</p>
+<div class="admonition warning">
+<p class="admonition-title">Atención</p>
+<ul>
+<li><code>git rm archivo</code> elimina el archivo del índice y del directorio de trabajo.</li>
+<li><code>git rm --cached archivo</code> lo elimina únicamente del índice de Git, conservándolo en el directorio de trabajo.</li>
+</ul>
+<p>El archivo seguirá existiendo en los commits anteriores del historial.</p>
+</div>
+<h2 id="comprobar-si-un-archivo-esta-siendo-ignorado">Comprobar si un archivo está siendo ignorado<a class="headerlink" href="#comprobar-si-un-archivo-esta-siendo-ignorado" title="Permanent link">¶</a></h2>
+<p>Podemos utilizar el comando:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>check-ignore<span class="w"> </span>-v<span class="w"> </span>nombreArchivo
+</span></code></pre></div>
+<p>Por ejemplo:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>check-ignore<span class="w"> </span>-v<span class="w"> </span>errores.log
+</span></code></pre></div>
+<p>Resultado:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><span class="linenos" data-linenos="1 "></span>.gitignore:5:*.log    errores.log
+</span></code></pre></div>
+<p>Este resultado indica que el archivo está siendo ignorado por la regla <code>*.log</code>, situada en la línea 5 del archivo <code>.gitignore</code>.</p>
+<p>Para comprobar archivos ya seguidos por Git, podemos añadir la opción <code>--no-index</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><span class="linenos" data-linenos="1 "></span>git<span class="w"> </span>check-ignore<span class="w"> </span>--no-index<span class="w"> </span>-v<span class="w"> </span>errores.log
+</span></code></pre></div>
+<h2 id="plantillas-de-gitignore">Plantillas de <code>.gitignore</code><a class="headerlink" href="#plantillas-de-gitignore" title="Permanent link">¶</a></h2>
+<p>No es necesario escribir todas las reglas manualmente. GitHub dispone de plantillas preparadas para diferentes lenguajes de programación, sistemas operativos y entornos de desarrollo.</p>
+<p>Podemos consultar las plantillas oficiales en:</p>
+<p><a href="https://github.com/github/gitignore">Repositorio de plantillas gitignore de GitHub</a></p>
+<p>Al crear un repositorio en GitHub también podemos seleccionar una plantilla <code>.gitignore</code> apropiada para nuestro proyecto.</p>
+<h2 id="resumen-de-comandos">Resumen de comandos<a class="headerlink" href="#resumen-de-comandos" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git status</code></td>
+<td>Muestra los archivos nuevos, modificados y preparados</td>
+</tr>
+<tr>
+<td><code>git add .</code></td>
+<td>Añade los archivos no ignorados al área de preparación</td>
+</tr>
+<tr>
+<td><code>git check-ignore -v archivo</code></td>
+<td>Comprueba qué regla ignora un archivo no seguido</td>
+</tr>
+<tr>
+<td><code>git rm --cached archivo</code></td>
+<td>Deja de seguir un archivo sin borrarlo del disco</td>
+</tr>
+<tr>
+<td><code>git ls-files</code></td>
+<td>Muestra los archivos que Git está siguiendo</td>
+</tr>
+<tr>
+<td><code>git status --ignored</code></td>
+<td>Muestra también los archivos ignorados</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Recuerda</p>
+<ul>
+<li><code>.gitignore</code> indica qué archivos no deben incorporarse al seguimiento de Git.</li>
+<li>No elimina archivos del ordenador.</li>
+<li>No afecta automáticamente a los archivos que ya están siendo seguidos.</li>
+<li>Debe guardarse en el repositorio para compartir las reglas con el equipo.</li>
+<li>No elimina información sensible del historial de Git si ya se ha confirmado anteriormente.</li>
+</ul>
+</div>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
@@ -1183,7 +1527,7 @@ En <strong>Visual Studio Code</strong>, por ejemplo, basta con pulsar el botón 
       <nav class="md-footer__inner md-grid" aria-label="Pie">
         
           
-          <a href="11_MecanismosActualizacion.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 11. Mecanismos de actualización">
+          <a href="10_PushPullFetch.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 10. Push / Pull / Fetch">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -1193,20 +1537,20 @@ En <strong>Visual Studio Code</strong>, por ejemplo, basta con pulsar el botón 
                 Anterior
               </span>
               <div class="md-ellipsis">
-                11. Mecanismos de actualización
+                10. Push / Pull / Fetch
               </div>
             </div>
           </a>
         
         
           
-          <a href="13_VentajasInconvenientes.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 13. Ventajas e inconvenientes del uso de IDE">
+          <a href="12_MecanismosActualizacion.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 12. Mecanismos de actualización">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Siguiente
               </span>
               <div class="md-ellipsis">
-                13. Ventajas e inconvenientes del uso de IDE
+                12. Mecanismos de actualización
               </div>
             </div>
             <div class="md-footer__button md-icon">
