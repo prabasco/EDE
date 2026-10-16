@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#comandos-de-historial-y-sincronizacion-en-git" class="md-skip">
+        <a href="#sincronizacion-en-git" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -899,45 +899,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#comando-git-log" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Comando git log
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Comando git log">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ejemplo-basico" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ejemplo básico
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#opciones-utiles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Opciones útiles
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#comandos-de-sincronizacion-push-pull-y-fetch" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1115,72 +1076,26 @@
 
 
 
-<h1 id="comandos-de-historial-y-sincronizacion-en-git">Comandos de historial y sincronización en Git<a class="headerlink" href="#comandos-de-historial-y-sincronizacion-en-git" title="Permanent link">¶</a></h1>
-<h2 id="comando-git-log">Comando <code>git log</code><a class="headerlink" href="#comando-git-log" title="Permanent link">¶</a></h2>
-<p>El comando <code>git log</code> muestra las confirmaciones (commits) realizadas en el proyecto.
-Permite <strong>ver el historial</strong>, <strong>buscar cambios concretos</strong> y <strong>filtrar resultados</strong>.</p>
-<p>Mientras que <code>git status</code> muestra el estado actual del proyecto, <code>git log</code> se centra en el <strong>historial confirmado</strong>.</p>
-<h3 id="ejemplo-basico">Ejemplo básico<a class="headerlink" href="#ejemplo-basico" title="Permanent link">¶</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>git log
-</span></code></pre></div>
-<p>Muestra el historial completo de confirmaciones.
-- Usa <strong>Espacio</strong> para avanzar.
-- Usa <strong>q</strong> para salir.</p>
-<h3 id="opciones-utiles">Opciones útiles<a class="headerlink" href="#opciones-utiles" title="Permanent link">¶</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>git log -n &lt;límite&gt;
-</span></code></pre></div>
-<p>Muestra solo un número específico de confirmaciones.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>git log --oneline
-</span></code></pre></div>
-<p>Muestra cada confirmación en una sola línea (resumen rápido).</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>git log --stat
-</span></code></pre></div>
-<p>Incluye el detalle de archivos modificados y número de líneas añadidas o eliminadas.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>git log -p
-</span></code></pre></div>
-<p>Muestra las diferencias exactas de cada commit (detalle máximo).</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>git log --author="&lt;nombre&gt;"
-</span></code></pre></div>
-<p>Filtra confirmaciones por autor.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span>git log --grep="&lt;texto&gt;"
-</span></code></pre></div>
-<p>Filtra confirmaciones según el mensaje del commit.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>git log &lt;inicio&gt;..&lt;fin&gt;
-</span></code></pre></div>
-<p>Muestra los commits entre dos puntos concretos (por ejemplo, entre ramas o IDs de commits).</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><span class="linenos" data-linenos="1 "></span>git log &lt;archivo&gt;
-</span></code></pre></div>
-<p>Muestra solo los commits donde se modificó ese archivo.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>git log --graph --decorate --oneline
-</span></code></pre></div>
-<ul>
-<li><code>--graph</code> → Dibuja un gráfico de ramas.</li>
-<li><code>--decorate</code> → Añade nombres de ramas o etiquetas.</li>
-<li><code>--oneline</code> → Muestra cada commit en una sola línea.</li>
-</ul>
-<div class="admonition info">
-<p class="admonition-title">Idea clave</p>
-<p><code>git log</code> es la herramienta principal para <strong>explorar el historial del repositorio</strong>, revisar versiones anteriores y analizar qué cambios se han hecho, cuándo y por quién.</p>
-</div>
+<h1 id="sincronizacion-en-git">Sincronización en Git<a class="headerlink" href="#sincronizacion-en-git" title="Permanent link">¶</a></h1>
 <h2 id="comandos-de-sincronizacion-push-pull-y-fetch">Comandos de sincronización: <code>push</code>, <code>pull</code> y <code>fetch</code><a class="headerlink" href="#comandos-de-sincronizacion-push-pull-y-fetch" title="Permanent link">¶</a></h2>
 <p>Estos tres comandos son los más importantes para <strong>sincronizar tu trabajo local con el repositorio remoto</strong> (por ejemplo, GitHub).</p>
 <h3 id="git-push"><code>git push</code><a class="headerlink" href="#git-push" title="Permanent link">¶</a></h3>
 <p>El comando <code>git push</code> <strong>envía los commits locales al repositorio remoto</strong>.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span>git push &lt;nombre_remoto&gt; &lt;rama&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos="1 "></span>git push &lt;nombre_remoto&gt; &lt;rama&gt;
 </span></code></pre></div>
 <h4 id="ejemplo-practico">Ejemplo práctico:<a class="headerlink" href="#ejemplo-practico" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>git push origin main
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>git push origin main
 </span></code></pre></div>
 <p>Sube tus cambios desde la rama local <code>main</code> al remoto <code>origin</code>.</p>
 <h4 id="subir-todas-las-ramas">Subir todas las ramas:<a class="headerlink" href="#subir-todas-las-ramas" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span>git push --all &lt;nombre_remoto&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>git push --all &lt;nombre_remoto&gt;
 </span></code></pre></div>
 <h4 id="forzar-subida-con-precaucion">Forzar subida (⚠️ con precaución):<a class="headerlink" href="#forzar-subida-con-precaucion" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span>git push --force &lt;nombre_remoto&gt; &lt;rama_remota&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>git push --force &lt;nombre_remoto&gt; &lt;rama_remota&gt;
 </span></code></pre></div>
 <p>Ignora los cambios existentes en el remoto y sobrescribe su contenido.</p>
 <h4 id="ignorar-comprobaciones-previas-hooks">Ignorar comprobaciones previas (hooks):<a class="headerlink" href="#ignorar-comprobaciones-previas-hooks" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span>git push --no-verify
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos="1 "></span>git push --no-verify
 </span></code></pre></div>
 <p>Evita ejecutar scripts automáticos antes de subir el código (solo en casos puntuales).</p>
 <div class="admonition info">
@@ -1189,7 +1104,7 @@ Permite <strong>ver el historial</strong>, <strong>buscar cambios concretos</str
 </div>
 <h3 id="git-pull"><code>git pull</code><a class="headerlink" href="#git-pull" title="Permanent link">¶</a></h3>
 <p>El comando <code>git pull</code> <strong>descarga los cambios</strong> del repositorio remoto y los <strong>fusiona automáticamente</strong> con tu rama local.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><span class="linenos" data-linenos="1 "></span>git pull &lt;nombre_remoto&gt; &lt;nombre_rama&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>git pull &lt;nombre_remoto&gt; &lt;nombre_rama&gt;
 </span></code></pre></div>
 <h4 id="que-hace-internamente">Qué hace internamente:<a class="headerlink" href="#que-hace-internamente" title="Permanent link">¶</a></h4>
 <p><code>git pull</code> = <code>git fetch</code> + <code>git merge</code></p>
@@ -1198,7 +1113,7 @@ Permite <strong>ver el historial</strong>, <strong>buscar cambios concretos</str
 <li><strong>merge</strong> → Los une con tu rama local.</li>
 </ol>
 <h4 id="ejemplo">Ejemplo:<a class="headerlink" href="#ejemplo" title="Permanent link">¶</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><span class="linenos" data-linenos="1 "></span>git pull origin main
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span>git pull origin main
 </span></code></pre></div>
 <div class="admonition danger">
 <p class="admonition-title">Importante</p>
@@ -1208,7 +1123,7 @@ Siempre guarda tus cambios con <code>git commit</code> antes de actualizar.</p>
 <h3 id="git-fetch"><code>git fetch</code><a class="headerlink" href="#git-fetch" title="Permanent link">¶</a></h3>
 <p>El comando <code>git fetch</code> <strong>descarga los cambios del remoto</strong> pero <strong>no los fusiona automáticamente</strong>.
 Te permite revisar las diferencias antes de actualizar tu rama.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><span class="linenos" data-linenos="1 "></span>git fetch
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><span class="linenos" data-linenos="1 "></span>git fetch
 </span></code></pre></div>
 <p>Después de un fetch, puedes comparar y decidir si hacer un merge o rebase manual.</p>
 <h2 id="idea-clave">Idea clave<a class="headerlink" href="#idea-clave" title="Permanent link">¶</a></h2>
