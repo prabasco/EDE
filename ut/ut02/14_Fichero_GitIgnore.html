@@ -8,6 +8,8 @@
         <link rel="canonical" href="https://github.com/prabasco/EDE/ut/ut02/14_Fichero_GitIgnore.html">
       
       
+        <link rel="prev" href="13_VentajasInconvenientes.html">
+      
       
       
         
@@ -18,7 +20,7 @@
     
     
       
-        <title>El archivo .gitignore en Git - Entornos de desarrollo</title>
+        <title>14. Fichero .gitignore - Entornos de desarrollo</title>
       
     
     
@@ -120,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              El archivo .gitignore en Git
+              14. Fichero .gitignore
             
           </span>
         </div>
@@ -473,8 +475,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -512,11 +516,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -537,7 +541,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -944,17 +948,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="14_ConfiguracionIDE.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Fichero .gitignore
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="14_Fichero_GitIgnore.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    14. Configuración de un IDE
+    14. Fichero .gitignore
   
 
     
@@ -963,6 +994,203 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#que-es-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué es .gitignore?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-un-archivo-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear un archivo .gitignore
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxis-del-archivo-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintaxis del archivo .gitignore
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sintaxis del archivo .gitignore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-de-gitignore-para-un-proyecto-java" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo de .gitignore para un proyecto Java
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-practico-de-funcionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo práctico de funcionamiento
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo práctico de funcionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-el-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 1. Crear el repositorio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-crear-archivos-y-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 2. Crear archivos y carpetas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-configurar-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 3. Configurar .gitignore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-consultar-el-estado-del-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 4. Consultar el estado del repositorio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-5-anadir-los-archivos-al-area-de-preparacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 5. Añadir los archivos al área de preparación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-6-realizar-el-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 6. Realizar el commit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-ocurre-si-un-archivo-ya-esta-siendo-seguido-por-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué ocurre si un archivo ya está siendo seguido por Git?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comprobar-si-un-archivo-esta-siendo-ignorado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprobar si un archivo está siendo ignorado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plantillas-de-gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plantillas de .gitignore
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumen-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen de comandos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1292,6 +1520,28 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie">
+        
+          
+          <a href="13_VentajasInconvenientes.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 13. Ventajas e inconvenientes del uso de IDE">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                13. Ventajas e inconvenientes del uso de IDE
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
