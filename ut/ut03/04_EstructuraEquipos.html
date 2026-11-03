@@ -1297,6 +1297,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Relación global entre fases y roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tabla-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla resumen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferencias-entre-roles-de-coordinacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diferencias entre roles de coordinación
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1307,6 +1335,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Actividades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ac-305-analisis-de-roles-en-las-fases-del-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AC 305. Análisis de roles en las fases del desarrollo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ac-306-organizacion-simulada-de-un-equipo-de-desarrollo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AC 306. Organización simulada de un equipo de desarrollo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1400,134 +1456,228 @@
 
 
 <h1 id="estructura-de-los-equipos-de-trabajo-en-las-fases-del-desarrollo-de-software">Estructura de los equipos de trabajo en las fases del desarrollo de software<a class="headerlink" href="#estructura-de-los-equipos-de-trabajo-en-las-fases-del-desarrollo-de-software" title="Permanent link">¶</a></h1>
-<p>El desarrollo de una aplicación no depende únicamente de escribir código.
-Cada fase del ciclo de vida del software requiere <strong>roles especializados</strong> que garanticen la calidad, la coordinación y la eficiencia del proyecto.
-A continuación, se muestra cómo se organiza un <strong>equipo de trabajo típico</strong> en torno a las fases de desarrollo.</p>
-<pre class="mermaid"><code>graph LR
-  A[Análisis de requisitos] --&gt; B[Diseño del sistema]
-  B --&gt; C[Implementación]
-  C --&gt; D[Pruebas y verificación]
-  D --&gt; E[Despliegue]
-  E --&gt; F[Mantenimiento]</code></pre>
+<p>El desarrollo de una aplicación no depende únicamente de escribir código. Requiere profesionales que colaboren para <strong>comprender las necesidades del cliente, diseñar la solución, implementarla, comprobar su calidad, desplegarla y mantenerla</strong>.</p>
+<p>Los <strong>roles</strong> representan responsabilidades, no necesariamente puestos de trabajo diferentes: en un proyecto pequeño, una persona puede asumir varias funciones; en uno grande, un mismo rol puede estar repartido entre varias personas.</p>
+<p>El siguiente esquema presenta las fases habituales de forma secuencial para facilitar su estudio. <strong>En los proyectos ágiles, muchas de estas actividades se solapan y se repiten en cada iteración.</strong></p>
+<pre class="mermaid"><code>flowchart TD
+    A["1. Análisis de requisitos"] --&gt; B["2. Diseño del sistema"]
+    B --&gt; C["3. Implementación"]
+    C --&gt; D["4. Pruebas y verificación"]
+    D --&gt; E["5. Despliegue"]
+    E --&gt; F["6. Mantenimiento y mejora"]
+    F -. "Nuevas necesidades" .-&gt; A</code></pre>
 <h2 id="1-analisis-de-requisitos">1. Análisis de requisitos<a class="headerlink" href="#1-analisis-de-requisitos" title="Permanent link">¶</a></h2>
-<p>Durante esta primera fase, el objetivo es <strong>entender qué necesita el cliente</strong> y traducirlo en objetivos concretos.
-Los perfiles clave en esta etapa son:</p>
+<p>El objetivo es <strong>identificar qué necesita el cliente, quién utilizará el sistema y qué condiciones debe cumplir</strong>. Los requisitos pueden ser <strong>funcionales</strong> (qué hace la aplicación) o <strong>no funcionales</strong> (seguridad, rendimiento, accesibilidad, etc.).</p>
 <ul>
-<li><strong>Analista Comercial:</strong> interpreta los objetivos del cliente y los convierte en especificaciones técnicas.</li>
-<li><strong>Product Owner:</strong> define la visión del producto y prioriza los requisitos más importantes.</li>
-<li><strong>Project Manager:</strong> coordina las reuniones iniciales, establece plazos y recursos.</li>
+<li><strong>Analista de negocio o funcional (Business Analyst):</strong> recoge las necesidades del cliente, las aclara y las documenta como requisitos comprensibles y verificables. En algunas organizaciones esta función la desempeña un analista comercial, aunque ambos nombres no son siempre equivalentes.</li>
+<li><strong>Product Owner (<abbr title="Pruebas objetivas">PO</abbr>):</strong> en Scrum, maximiza el valor del producto y se responsabiliza de gestionar y ordenar el <em>Product Backlog</em>; colabora en la aclaración de los requisitos.</li>
+<li><strong>Project Manager (jefe de proyecto):</strong> cuando existe este puesto, coordina la planificación, los recursos, los plazos y los riesgos del proyecto. <strong>No es un rol definido por Scrum.</strong></li>
+<li><strong>Usuarios y cliente:</strong> aportan necesidades, restricciones y comentarios para comprobar que se está construyendo el producto adecuado.</li>
 </ul>
 <div class="admonition example">
-<p class="admonition-title">Ejemplo</p>
-<p>En una app de gestión de reservas, el analista determina qué datos registrar; el product owner decide qué funciones son prioritarias, y el project manager planifica las entregas.</p>
+<p class="admonition-title">Ejemplo: aplicación de reservas</p>
+<p>El analista documenta que los clientes deben poder reservar y cancelar una cita; el Product Owner prioriza la reserva frente a funcionalidades secundarias; y el Project Manager, si existe, organiza los recursos y las fechas de entrega.</p>
 </div>
 <h2 id="2-diseno-del-sistema">2. Diseño del sistema<a class="headerlink" href="#2-diseno-del-sistema" title="Permanent link">¶</a></h2>
-<p>Una vez definidos los requisitos, se diseña <strong>la arquitectura del software</strong> y la <strong>experiencia del usuario</strong>.
-Aquí entran en juego roles centrados en el <strong>cómo se construirá</strong> el sistema:</p>
+<p>Se define <strong>cómo se construirá la solución</strong>, tanto desde el punto de vista técnico como desde la experiencia de uso.</p>
 <ul>
-<li><strong>Arquitecto o Tech Lead:</strong> diseña la estructura técnica, define frameworks y bases de datos.</li>
-<li><strong>Team Lead:</strong> organiza las tareas del equipo y supervisa el cumplimiento del diseño.</li>
-<li><strong>Diseñadores UX/UI:</strong> elaboran prototipos visuales y diagramas de interacción.</li>
+<li><strong>Arquitecto de software / Tech Lead:</strong> propone o guía las decisiones técnicas: componentes, arquitectura, tecnologías, comunicación entre servicios y persistencia de datos. Sus responsabilidades concretas varían según la organización.</li>
+<li><strong>Team Lead:</strong> facilita la coordinación del equipo y el reparto de responsabilidades cuando existe este puesto; puede participar también en las decisiones técnicas.</li>
+<li><strong>Diseñadores UX/UI:</strong> investigan necesidades de los usuarios, diseñan flujos de interacción, bocetos, prototipos e interfaces visuales.</li>
+<li><strong>Desarrolladores:</strong> aportan criterios de viabilidad técnica y ayudan a concretar las soluciones.</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Recordatorio</p>
-<p>El diseño no es solo estético: también es funcional. Un buen diseño anticipa problemas técnicos y mejora la usabilidad del software.</p>
+<p><strong>UX</strong> se centra en la experiencia de uso y <strong>UI</strong> en el diseño de la interfaz. El diseño del sistema incluye también arquitectura, seguridad, datos y rendimiento; no se limita al aspecto visual.</p>
 </div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut03/ut03_05.png" data-desc-position="bottom"><img alt="Roles del equipo y su relación" src="../../img/ut03/ut03_05.png"></a></p>
 <h2 id="3-implementacion-o-desarrollo">3. Implementación o desarrollo<a class="headerlink" href="#3-implementacion-o-desarrollo" title="Permanent link">¶</a></h2>
-<p>En esta fase comienza la <strong>codificación del software</strong>.
-Los desarrolladores transforman el diseño en un producto funcional siguiendo las especificaciones técnicas.</p>
-<p>Roles principales:</p>
+<p>Los desarrolladores convierten los requisitos y el diseño en <strong>código ejecutable</strong>, integrando los diferentes componentes de la aplicación.</p>
 <ul>
-<li><strong>Desarrolladores Front-end:</strong> construyen la interfaz visual y la interacción con el usuario.</li>
-<li><strong>Desarrolladores Back-end:</strong> gestionan la lógica de negocio, la seguridad y la comunicación con la base de datos.</li>
-<li><strong>Desarrolladores Full-stack:</strong> trabajan tanto en la parte visible como en la lógica interna del sistema.</li>
-<li><strong>Team Lead / Tech Lead:</strong> supervisan la calidad del código, revisan pull requests y garantizan las buenas prácticas.</li>
+<li><strong>Desarrolladores Front-end:</strong> implementan la interfaz y su comportamiento en el cliente, especialmente en aplicaciones web.</li>
+<li><strong>Desarrolladores Back-end:</strong> implementan servicios, reglas de negocio, acceso a datos y mecanismos de seguridad del servidor.</li>
+<li><strong>Desarrolladores Full-stack:</strong> trabajan tanto en el front-end como en el back-end.</li>
+<li><strong>Desarrolladores móviles:</strong> crean aplicaciones para dispositivos móviles, por ejemplo con Kotlin y Jetpack Compose para Android.</li>
+<li><strong>Tech Lead / Team Lead:</strong> según la estructura del equipo, orientan decisiones técnicas, facilitan revisiones de código y ayudan a mantener criterios de calidad.</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Herramientas comunes</p>
-<p>Durante esta fase se utilizan sistemas de control de versiones (Git), entornos de desarrollo (IDE), y repositorios colaborativos (GitHub, GitLab, Bitbucket).</p>
+<p>Se utilizan <strong>IDE</strong> (Visual Studio Code, IntelliJ IDEA o Android Studio), <strong>Git</strong> para el control de versiones y plataformas de colaboración como GitHub o GitLab. Las <em>pull requests</em> permiten proponer y revisar cambios antes de integrarlos.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Ejemplo</p>
+<p>En una aplicación de reservas, el front-end muestra el formulario, el back-end comprueba la disponibilidad y la base de datos almacena las reservas. En una aplicación Android, el desarrollador móvil implementa la interfaz y se comunica con una API REST.</p>
 </div>
 <h2 id="4-pruebas-y-verificacion">4. Pruebas y verificación<a class="headerlink" href="#4-pruebas-y-verificacion" title="Permanent link">¶</a></h2>
-<p>Antes de publicar la aplicación, es necesario <strong>comprobar su funcionamiento</strong>.
-Aquí entran los roles encargados de validar la calidad del software:</p>
+<p>Se comprueba que el software <strong>funciona según lo esperado, cumple los requisitos y presenta un nivel de calidad adecuado</strong>. Las pruebas no se realizan únicamente al final: también pueden ejecutarse durante la implementación y de forma automatizada.</p>
 <ul>
-<li><strong>Desarrolladores y QA Testers:</strong> ejecutan pruebas unitarias, de integración y de sistema.</li>
-<li><strong>Scrum Master:</strong> coordina los sprints de revisión y resuelve bloqueos.</li>
-<li><strong>Project Manager:</strong> valida que las entregas cumplan los criterios de aceptación definidos.</li>
+<li><strong>Desarrolladores:</strong> crean y ejecutan pruebas unitarias y colaboran en pruebas de integración, entre otras.</li>
+<li><strong>QA Testers / profesionales de calidad:</strong> diseñan casos de prueba, comprueban comportamientos, registran defectos y colaboran en pruebas funcionales, de integración y de sistema.</li>
+<li><strong>Product Owner y usuarios implicados:</strong> ayudan a comprobar que el resultado satisface las necesidades y los criterios de aceptación establecidos.</li>
+<li><strong>Tech Lead:</strong> ayuda a definir prácticas de calidad técnica y estrategias de pruebas cuando corresponde.</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Importancia</p>
-<p>Las pruebas no se limitan a encontrar errores: también garantizan que el software cumple con los objetivos del cliente y las expectativas de los usuarios.</p>
+<div class="admonition warning">
+<p class="admonition-title">No confundir responsabilidades</p>
+<p>El <strong>Scrum Master no es un tester ni el responsable de aprobar las pruebas</strong>. En Scrum, facilita la aplicación del marco de trabajo, ayuda a eliminar impedimentos y contribuye a la eficacia del equipo. Del mismo modo, un Project Manager no es automáticamente quien valida los criterios de aceptación funcionales.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Ejemplo</p>
+<p>Para una reserva, se prueba que no puedan asignarse dos citas al mismo recurso y horario, que se informe de los errores y que la cancelación actualice correctamente los datos.</p>
 </div>
 <h2 id="5-despliegue">5. Despliegue<a class="headerlink" href="#5-despliegue" title="Permanent link">¶</a></h2>
-<p>Con la aplicación ya verificada, se realiza el <strong>despliegue en el entorno de producción</strong>.
-Este proceso requiere coordinación y control de versiones.</p>
+<p>Consiste en <strong>poner una versión de la aplicación a disposición de los usuarios</strong>, normalmente en un entorno de producción. Puede realizarse de forma manual o mediante procesos automatizados de integración y entrega continua (CI/CD).</p>
 <ul>
-<li><strong>DevOps o Administradores de sistemas:</strong> automatizan la publicación y configuración de servidores.</li>
-<li><strong>Project Manager:</strong> aprueba la entrega final.</li>
-<li><strong>Product Owner:</strong> revisa que la versión liberada cumpla los requisitos funcionales.</li>
+<li><strong>Profesionales DevOps / operaciones / administradores de sistemas:</strong> colaboran en la automatización, la infraestructura, la configuración y la monitorización del despliegue. <em>DevOps</em> es también un conjunto de prácticas y una cultura de colaboración, no necesariamente un cargo.</li>
+<li><strong>Desarrolladores:</strong> preparan la aplicación, sus dependencias y los cambios necesarios para su publicación.</li>
+<li><strong>Project Manager:</strong> cuando existe, coordina calendarios, dependencias y comunicación de la entrega.</li>
+<li><strong>Product Owner y responsables autorizados:</strong> revisan el alcance funcional y participan en las decisiones de publicación según el procedimiento de la organización. <strong>La aprobación formal no corresponde siempre al mismo rol.</strong></li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Ejemplo</p>
-<p>En una aplicación web, el despliegue puede implicar subir la versión final al servidor, configurar la base de datos y activar el dominio público.</p>
+<p>En una aplicación web se publica la nueva versión en un servidor, se aplican las migraciones necesarias de la base de datos y se comprueba que el servicio responde correctamente. Conviene disponer de monitorización y de un plan de reversión ante fallos.</p>
 </div>
 <h2 id="6-mantenimiento-y-mejora-continua">6. Mantenimiento y mejora continua<a class="headerlink" href="#6-mantenimiento-y-mejora-continua" title="Permanent link">¶</a></h2>
-<p>El ciclo no termina con la publicación.
-Durante el mantenimiento se <strong>corrigen errores</strong>, <strong>se actualizan versiones</strong> y <strong>se añaden nuevas funcionalidades</strong> según la retroalimentación de los usuarios.</p>
-<p>Participan:</p>
+<p>Después del despliegue, el producto necesita <strong>corrección de defectos, actualizaciones de seguridad, adaptación a cambios y nuevas funcionalidades</strong>.</p>
 <ul>
-<li><strong>Desarrolladores:</strong> corrigen bugs o mejoran el rendimiento.</li>
-<li><strong>Tech Lead:</strong> supervisa los cambios estructurales.</li>
-<li><strong>Product Owner:</strong> evalúa nuevas funcionalidades y gestiona las prioridades.</li>
-<li><strong>Scrum Master:</strong> mantiene la agilidad del equipo y las iteraciones de mejora.</li>
+<li><strong>Desarrolladores:</strong> diagnostican incidencias, corrigen errores, actualizan dependencias y mejoran el rendimiento.</li>
+<li><strong>Tech Lead / arquitecto:</strong> analiza el impacto técnico de los cambios importantes y la evolución de la arquitectura.</li>
+<li><strong>Product Owner:</strong> revisa las nuevas necesidades y reordena el <em>Product Backlog</em> cuando se trabaja con Scrum.</li>
+<li><strong>QA:</strong> verifica las correcciones y realiza pruebas de regresión.</li>
+<li><strong>Operaciones / DevOps:</strong> monitoriza el servicio y colabora en la respuesta ante incidencias.</li>
+<li><strong>Scrum Master:</strong> si el equipo utiliza Scrum, facilita la mejora continua de su forma de trabajo; no dirige técnicamente el mantenimiento.</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Buena práctica</p>
-<p>Documentar las mejoras y mantener un control de versiones actualizado facilita futuras ampliaciones del software.</p>
+<p>Documentar las incidencias, utilizar un sistema de seguimiento de tareas y mantener el control de versiones facilita la evolución del software.</p>
 </div>
 <h2 id="relacion-global-entre-fases-y-roles">Relación global entre fases y roles<a class="headerlink" href="#relacion-global-entre-fases-y-roles" title="Permanent link">¶</a></h2>
-<p>El siguiente diagrama resume la participación de los diferentes perfiles en cada fase del desarrollo:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut03/ut03_06.png" data-desc-position="bottom"><img alt="Relación Fases Desarrollo con Roles o perfiles" src="../../img/ut03/ut03_06.png"></a></p>
+<p>La siguiente imagen muestra una <strong>asociación simplificada de perfiles y fases</strong>. No implica que cada profesional participe exclusivamente en una etapa ni que las funciones sean idénticas en todas las empresas.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ut03/ut03_06.png" data-desc-position="bottom"><img alt="Relación entre las fases de desarrollo y los perfiles profesionales" src="../../img/ut03/ut03_06.png"></a></p>
+<h3 id="tabla-resumen">Tabla resumen<a class="headerlink" href="#tabla-resumen" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Perfiles habituales</th>
+<th>Responsabilidad principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Análisis</strong></td>
+<td>Analista de negocio, Product Owner, Project Manager</td>
+<td>Recoger y priorizar necesidades; planificar el proyecto cuando proceda.</td>
+</tr>
+<tr>
+<td><strong>Diseño</strong></td>
+<td>Arquitecto / Tech Lead, UX/UI, desarrolladores, Team Lead</td>
+<td>Definir la arquitectura, la interfaz y las soluciones técnicas.</td>
+</tr>
+<tr>
+<td><strong>Implementación</strong></td>
+<td>Desarrolladores, Tech Lead / Team Lead</td>
+<td>Programar, integrar y revisar el código.</td>
+</tr>
+<tr>
+<td><strong>Pruebas</strong></td>
+<td>Desarrolladores, QA, Product Owner</td>
+<td>Comprobar la calidad técnica y el cumplimiento de requisitos.</td>
+</tr>
+<tr>
+<td><strong>Despliegue</strong></td>
+<td>Operaciones / DevOps, desarrolladores, responsables de entrega</td>
+<td>Publicar y verificar la versión en producción.</td>
+</tr>
+<tr>
+<td><strong>Mantenimiento</strong></td>
+<td>Desarrolladores, QA, operaciones, Tech Lead, Product Owner</td>
+<td>Corregir incidencias y evolucionar el producto.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diferencias-entre-roles-de-coordinacion">Diferencias entre roles de coordinación<a class="headerlink" href="#diferencias-entre-roles-de-coordinacion" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Enfoque principal</th>
+<th>Aclaración</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Product Owner</strong></td>
+<td>Valor del producto y orden del <em>Product Backlog</em>.</td>
+<td>Es una responsabilidad definida en Scrum.</td>
+</tr>
+<tr>
+<td><strong>Scrum Master</strong></td>
+<td>Eficacia del equipo Scrum y correcta comprensión y aplicación de Scrum.</td>
+<td>No asigna tareas por definición ni sustituye al Project Manager.</td>
+</tr>
+<tr>
+<td><strong>Project Manager</strong></td>
+<td>Planificación y gestión del proyecto, recursos y riesgos.</td>
+<td>No es uno de los tres roles o responsabilidades definidos por Scrum.</td>
+</tr>
+<tr>
+<td><strong>Tech Lead</strong></td>
+<td>Orientación técnica, arquitectura y calidad del código.</td>
+<td>Su alcance depende de la empresa.</td>
+</tr>
+<tr>
+<td><strong>Team Lead</strong></td>
+<td>Coordinación y acompañamiento del equipo.</td>
+<td>Puede coincidir con el Tech Lead en equipos pequeños.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Equipos tradicionales y ágiles</p>
+<p>En un <strong>modelo secuencial</strong>, las fases suelen representarse como etapas diferenciadas. En un <strong>modelo incremental o ágil</strong>, el equipo puede analizar, diseñar, implementar y probar en cada entrega. Scrum define tres responsabilidades (<em>Product Owner, Scrum Master y Developers</em>); otros puestos de la empresa pueden existir, pero no son responsabilidades adicionales de Scrum.</p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Conclusión</p>
-<p>La estructura de un equipo de trabajo en desarrollo de software se adapta al tamaño y la complejidad del proyecto.
-Comprender <strong>qué rol participa en cada fase</strong> ayuda a los futuros desarrolladores a integrarse mejor en proyectos reales, colaborando eficazmente y entendiendo el ciclo completo del software.</p>
+<p>Los equipos se organizan según el tamaño, la metodología y las necesidades del proyecto. <strong>Lo importante es comprender las responsabilidades y cómo colaboran</strong>, no memorizar una estructura fija aplicable a todas las empresas.</p>
 </div>
 <h2 id="actividades">Actividades<a class="headerlink" href="#actividades" title="Permanent link">¶</a></h2>
-<p><strong><abbr title="Actividades de clase.">AC</abbr> 305</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han creado proyectos de desarrollo de aplicaciones.">CE1b</abbr> / <abbr title="Escala de valores.">IC1</abbr>/ 3p). Analiza los roles del equipo de desarrollo en cada fase del ciclo de vida del software.</p>
+<h3 id="ac-305-analisis-de-roles-en-las-fases-del-desarrollo"><abbr title="Actividades de clase.">AC</abbr> 305. Análisis de roles en las fases del desarrollo<a class="headerlink" href="#ac-305-analisis-de-roles-en-las-fases-del-desarrollo" title="Permanent link">¶</a></h3>
+<p><strong><abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han creado proyectos de desarrollo de aplicaciones.">CE1b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3 puntos.</strong> Analiza los roles del equipo de desarrollo en cada fase del ciclo de vida del software.</p>
 <ol>
-<li>Elabora una tabla donde relaciones cada fase (análisis, diseño, implementación, pruebas, despliegue y mantenimiento) con los roles profesionales que intervienen en ella (Product Owner, Project Manager, Analista, Desarrollador, etc.).</li>
-<li>Para cada relación, explica en una línea qué aporta ese rol en dicha fase.</li>
-<li>Incluye al menos un ejemplo real o simulado (por ejemplo, una app móvil, una web o un sistema de gestión) donde se vea la interacción entre dos de esos roles.</li>
+<li>Elabora una tabla que relacione las seis fases (análisis, diseño, implementación, pruebas, despliegue y mantenimiento) con los perfiles que intervienen en ellas.</li>
+<li>Para cada relación, explica en una línea qué aporta ese perfil.</li>
+<li>Incluye al menos un ejemplo real o simulado (app móvil, web o sistema de gestión) que muestre la colaboración entre dos roles.</li>
+<li>Explica por qué un mismo profesional puede intervenir en varias fases.</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Consejo</p>
-<p>Puedes usar herramientas como Notion, Canva o Draw.io para representar visualmente el flujo de participación de los roles.</p>
+<p>Puedes utilizar diagrams.net (Draw.io), Canva o una tabla Markdown. Justifica las relaciones, no te limites a enumerar nombres.</p>
 </div>
-<p><strong><abbr title="Actividades de clase.">AC</abbr> 306</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han creado proyectos de desarrollo de aplicaciones.">CE1b</abbr> / <abbr title="Escala de valores.">IC1</abbr>/ 3p). Simula la organización de un equipo de desarrollo para un proyecto real.</p>
+<h3 id="ac-306-organizacion-simulada-de-un-equipo-de-desarrollo"><abbr title="Actividades de clase.">AC</abbr> 306. Organización simulada de un equipo de desarrollo<a class="headerlink" href="#ac-306-organizacion-simulada-de-un-equipo-de-desarrollo" title="Permanent link">¶</a></h3>
+<p><strong><abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han creado proyectos de desarrollo de aplicaciones.">CE1b</abbr> / <abbr title="Escala de valores.">IC1</abbr> / 3 puntos.</strong> Simula la organización de un equipo de desarrollo para un proyecto.</p>
 <ol>
-<li>Imagina que tu equipo va a desarrollar una aplicación sencilla (por ejemplo, una app de reservas, una web de recetas o un blog personal).</li>
+<li>Imagina que tu equipo desarrollará una aplicación sencilla (reservas, recetas o blog personal).</li>
 <li>
-<p>Asigna los siguientes roles entre los miembros del grupo:</p>
+<p>Reparte entre los integrantes las siguientes <strong>responsabilidades simuladas</strong> (una persona puede asumir varias):</p>
 <ul>
-<li>Product Owner</li>
-<li>Project Manager</li>
-<li>Analista Comercial</li>
-<li>Desarrollador Front-end</li>
-<li>Desarrollador Back-end</li>
-<li>Diseñador UX/UI</li>
-<li>Scrum Master</li>
+<li>Product Owner.</li>
+<li>Project Manager.</li>
+<li>Analista de negocio o funcional.</li>
+<li>Desarrollador Front-end.</li>
+<li>Desarrollador Back-end.</li>
+<li>Diseñador UX/UI.</li>
+<li>Scrum Master, <strong>solo si se decide simular el uso de Scrum</strong>.</li>
 </ul>
 </li>
 <li>
-<p>Indica qué tareas concretas realizará cada uno durante las distintas fases del proyecto.</p>
+<p>Describe las tareas concretas de cada participante en las distintas fases del proyecto.</p>
 </li>
-<li>Representa el resultado en un diagrama o esquema que muestre cómo fluye la comunicación y la colaboración entre ellos.</li>
+<li>Dibuja un esquema que represente la comunicación y la colaboración entre los perfiles.</li>
+<li>Indica quién comprobaría los criterios de aceptación y quién se encargaría del despliegue técnico, aunque esas responsabilidades deban asignarse a perfiles adicionales o compartirse.</li>
 </ol>
 <div class="admonition example">
 <p class="admonition-title">Ejemplo</p>
-<p>Durante la fase de diseño, el Tech Lead define la arquitectura mientras el Diseñador UX crea los primeros prototipos y el Product Owner valida las funcionalidades clave.</p>
+<p>Durante el diseño, el Tech Lead propone la arquitectura, el diseñador UX/UI prepara el prototipo y el Product Owner aclara y prioriza las necesidades. Posteriormente, los desarrolladores implementan las funciones y comprueban su funcionamiento con ayuda de QA, si existe ese perfil.</p>
 </div>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
