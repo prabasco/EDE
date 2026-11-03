@@ -1354,23 +1354,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. Automatización, pruebas e integración y despliegue continuos (CI/CD)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ejemplo-github-actions-para-un-proyecto-java-con-maven" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ejemplo: GitHub Actions para un proyecto Java con Maven
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1413,82 +1396,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-actividad-practica-pr-307-edutrack" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Actividad práctica: PR 307 — EduTrack
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="8. Actividad práctica: PR 307 — EduTrack">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#situacion-de-partida" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Situación de partida
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sesion-1-analisis-y-diseno" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sesión 1. Análisis y diseño
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sesion-2-implementacion-y-validacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sesión 2. Implementación y validación
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#entregables" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Entregables
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#criterios-orientativos-de-valoracion-5-puntos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Criterios orientativos de valoración (5 puntos)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#referencias-y-recursos" class="md-nav__link">
     <span class="md-ellipsis">
       
         Referencias y recursos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividad
       
     </span>
   </a>
@@ -1825,30 +1747,6 @@
 <p class="admonition-title">Diferencia importante</p>
 <p><strong>Docker y Kubernetes no son sistemas de integración continua.</strong> Pueden utilizarse dentro de una solución de CI/CD, pero cumplen funciones diferentes. Tampoco basta con tener GitHub Actions para garantizar la calidad: hay que definir y mantener comprobaciones útiles.</p>
 </div>
-<h3 id="ejemplo-github-actions-para-un-proyecto-java-con-maven">Ejemplo: GitHub Actions para un proyecto Java con Maven<a class="headerlink" href="#ejemplo-github-actions-para-un-proyecto-java-con-maven" title="Permanent link">¶</a></h3>
-<p>Archivo <code>.github/workflows/java-ci.yml</code>:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Java CI</span>
-</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span>
-</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="nt">on</span><span class="p">:</span>
-</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
-</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
-</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="nt">jobs</span><span class="p">:</span>
-</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">  </span><span class="nt">build</span><span class="p">:</span>
-</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
-</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Obtener repositorio</span>
-</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
-</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configurar Java</span>
-</span><span id="__span-1-14"><span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-java@v4</span>
-</span><span id="__span-1-15"><span class="linenos" data-linenos="15 "></span><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-</span><span id="__span-1-16"><span class="linenos" data-linenos="16 "></span><span class="w">          </span><span class="nt">distribution</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">temurin</span>
-</span><span id="__span-1-17"><span class="linenos" data-linenos="17 "></span><span class="w">          </span><span class="nt">java-version</span><span class="p">:</span><span class="w"> </span><span class="s">'21'</span>
-</span><span id="__span-1-18"><span class="linenos" data-linenos="18 "></span><span class="w">          </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">maven</span>
-</span><span id="__span-1-19"><span class="linenos" data-linenos="19 "></span><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Compilar y ejecutar pruebas</span>
-</span><span id="__span-1-20"><span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mvn -B verify</span>
-</span></code></pre></div>
-<p>Este ejemplo <strong>requiere un proyecto Maven</strong> con <code>pom.xml</code> y pruebas configuradas. Las versiones de las acciones deben revisarse en la documentación antes de utilizar el ejemplo en un proyecto real. Si el proyecto usa Gradle, el comando y la configuración deben adaptarse.</p>
 <h2 id="6-diseno-prototipado-y-experiencia-de-usuario-uxui">6. Diseño, prototipado y experiencia de usuario (UX/UI)<a class="headerlink" href="#6-diseno-prototipado-y-experiencia-de-usuario-uxui" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>UX (<em>User Experience</em>):</strong> estudia las necesidades, la facilidad de uso y la experiencia global de la persona usuaria.</li>
@@ -1948,79 +1846,6 @@
 </tbody>
 </table>
 <p>Una herramienta puede utilizarse en varias fases; la elección depende de los requisitos, el equipo, la infraestructura y el presupuesto.</p>
-<h2 id="8-actividad-practica-pr-307-edutrack">8. Actividad práctica: <abbr title="Prácticas">PR</abbr> 307 — EduTrack<a class="headerlink" href="#8-actividad-practica-pr-307-edutrack" title="Permanent link">¶</a></h2>
-<p><strong><abbr title="Prácticas">PR</abbr> 307 (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han creado proyectos de desarrollo de aplicaciones.">CE1b</abbr>, <abbr title="Se han creado y utilizado constantes y literales.">CE1f</abbr>, <abbr title="Se han clasificado, reconocido y utilizado en expresiones los operadores del lenguaje.">CE1g</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p).</strong> Los códigos de evaluación se conservan del documento original y deben contrastarse con la programación didáctica del módulo.</p>
-<h3 id="situacion-de-partida">Situación de partida<a class="headerlink" href="#situacion-de-partida" title="Permanent link">¶</a></h3>
-<p>Formas parte de un pequeño equipo de desarrollo de <strong>EduTrack</strong>, una startup educativa que quiere crear aplicaciones sencillas para facilitar el aprendizaje digital. El equipo debe idear una aplicación, explicar su utilidad y construir una <strong>primera versión funcional mínima (MVP)</strong> en <strong>dos sesiones</strong>.</p>
-<p>El objetivo no es desarrollar una aplicación completa, sino recorrer a pequeña escala el proceso: <strong>idea → análisis → diseño → implementación → pruebas → demostración → feedback</strong>.</p>
-<h3 id="sesion-1-analisis-y-diseno">Sesión 1. Análisis y diseño<a class="headerlink" href="#sesion-1-analisis-y-diseno" title="Permanent link">¶</a></h3>
-<ol>
-<li>Elegid un problema educativo concreto y describid a sus usuarios.</li>
-<li>Redactad al menos <strong>tres requisitos funcionales</strong> y <strong>uno no funcional</strong>.</li>
-<li>Priorizad los requisitos e identificad la funcionalidad mínima que vais a implementar.</li>
-<li>Dibujad un wireframe o prototipo de la pantalla principal.</li>
-<li>Organizad las tareas en un tablero y cread un repositorio Git.</li>
-</ol>
-<h3 id="sesion-2-implementacion-y-validacion">Sesión 2. Implementación y validación<a class="headerlink" href="#sesion-2-implementacion-y-validacion" title="Permanent link">¶</a></h3>
-<ol>
-<li>Implementad una funcionalidad mínima ejecutable con las tecnologías conocidas por el equipo.</li>
-<li>Registrad al menos <strong>dos commits</strong> descriptivos.</li>
-<li>Preparad y ejecutad <strong>tres casos de prueba</strong>, anotando el resultado esperado y el obtenido.</li>
-<li>Demostrad la aplicación y recoged una propuesta de mejora.</li>
-<li>Explicad qué herramientas habéis utilizado y por qué.</li>
-</ol>
-<div class="admonition example">
-<p class="admonition-title">Ejemplo de MVP</p>
-<p>Una aplicación de tarjetas de estudio permite introducir una pregunta y su respuesta y mostrarlas en pantalla. En esta primera versión no es necesario implementar autenticación, base de datos ni sincronización en la nube.</p>
-</div>
-<h3 id="entregables">Entregables<a class="headerlink" href="#entregables" title="Permanent link">¶</a></h3>
-<ul>
-<li>Documento breve con problema, usuarios y requisitos.</li>
-<li>Wireframe o prototipo.</li>
-<li>Enlace al repositorio y evidencia de los commits.</li>
-<li>Código ejecutable o demostración reproducible.</li>
-<li>Tabla con tres pruebas y sus resultados.</li>
-<li>Reflexión final sobre herramientas, dificultades y mejoras.</li>
-</ul>
-<h3 id="criterios-orientativos-de-valoracion-5-puntos">Criterios orientativos de valoración (5 puntos)<a class="headerlink" href="#criterios-orientativos-de-valoracion-5-puntos" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Aspecto</th>
-<th style="text-align: right;">Puntuación</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Definición del problema y requisitos</td>
-<td style="text-align: right;">1,0</td>
-</tr>
-<tr>
-<td>Diseño y organización del trabajo</td>
-<td style="text-align: right;">1,0</td>
-</tr>
-<tr>
-<td>Implementación funcional mínima</td>
-<td style="text-align: right;">1,5</td>
-</tr>
-<tr>
-<td>Pruebas y evidencias</td>
-<td style="text-align: right;">1,0</td>
-</tr>
-<tr>
-<td>Justificación de herramientas y reflexión</td>
-<td style="text-align: right;">0,5</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td style="text-align: right;"><strong>5,0</strong></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition tip">
-<p class="admonition-title">Recomendación didáctica</p>
-<p>Seleccionad pocas herramientas y utilizadlas correctamente. Para esta práctica pueden bastar <strong>VS Code o IntelliJ IDEA, Git, GitHub y diagrams.net</strong>. La IA es opcional y su uso debe declararse si así lo exige el docente.</p>
-</div>
 <h2 id="referencias-y-recursos">Referencias y recursos<a class="headerlink" href="#referencias-y-recursos" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://git-scm.com/doc">Documentación oficial de Git</a></li>
@@ -2033,6 +1858,16 @@
 <li><a href="https://kubernetes.io/docs/home/">Documentación de Kubernetes</a></li>
 <li><a href="https://agilemanifesto.org/iso/es/manifesto.html">Manifiesto Ágil</a></li>
 </ul>
+<h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">¶</a></h2>
+<p><strong><abbr title="Prácticas">PR</abbr> 307</strong> (<abbr title="Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado.">RA1</abbr> / <abbr title="Se han creado proyectos de desarrollo de aplicaciones.">CE1b</abbr> <abbr title="Se han creado y utilizado constantes y literales.">CE1f</abbr> <abbr title="Se han clasificado, reconocido y utilizado en expresiones los operadores del lenguaje.">CE1g</abbr> / <abbr title="Rúbrica actividad individual.">IC2</abbr> / 5p). Imagina que formas parte de un pequeño equipo de desarrollo en una startup educativa llamada <strong>EduTrack</strong>, dedicada a crear aplicaciones sencillas que faciliten el aprendizaje digital.</p>
+<p>Tu equipo tiene el encargo de <strong>concebir una idea de aplicación funcional</strong>, definir su propósito y realizar una <strong>primera implementación básica</strong> en dos sesiones de trabajo colaborativo.</p>
+<p>El objetivo no es construir una app completa, sino <strong>experimentar el ciclo de vida del software en miniatura</strong>: desde la generación de la idea hasta una versión funcional mínima (<em>MVP</em>).</p>
+<div class="admonition info">
+<p class="admonition-title">Lo que se espera</p>
+<p>Este proyecto reproduce el ciclo real de creación de software:</p>
+<p>una idea → análisis → diseño → prototipo → validación.</p>
+<p>Ideal para entender cómo las herramientas y roles vistos en clase se combinan en la práctica.</p>
+</div>
 <!-- Resultados de Aprendizaje & Criterios de Evaluación -->
 <!-- Instrumentos de Evaluación -->
 <!-- Instrumentos de Calificación -->
