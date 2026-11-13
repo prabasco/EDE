@@ -8,6 +8,10 @@
         <link rel="canonical" href="https://github.com/prabasco/EDE/ut/ut04/04_ConceptosUML.html">
       
       
+        <link rel="prev" href="03_UML.html">
+      
+      
+        <link rel="next" href="05_RelacionesUML.html">
       
       
         
@@ -18,7 +22,7 @@
     
     
       
-        <title>Clases, atributos, métodos y visibilidad - Entornos de desarrollo</title>
+        <title>04. Conceptos UML - Entornos de desarrollo</title>
       
     
     
@@ -120,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Clases, atributos, métodos y visibilidad
+              04. Conceptos UML
             
           </span>
         </div>
@@ -1241,6 +1245,513 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UT 04.  Diagramas de clase
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    UT 04.  Diagramas de clase
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ResumenUT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta didáctica UT 04
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01_Introduccion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01. Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02_Conceptos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. Conceptos básicos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_UML.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Lenguaje UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Conceptos UML
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="04_ConceptosUML.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. Conceptos UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#que-es-un-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué es un objeto?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-una-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué es una clase?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atributos-el-estado-de-los-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atributos: el estado de los objetos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Atributos: el estado de los objetos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-clase-libro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: Clase Libro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-clase-cuenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: Clase Cuenta
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-el-comportamiento-de-los-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métodos: el comportamiento de los objetos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos: el comportamiento de los objetos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-metodos-de-libro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: Métodos de Libro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-metodos-de-cuenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: Métodos de Cuenta
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representacion-mediante-uml-diagramas-de-clases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Representación mediante UML: Diagramas de Clases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modificadores-de-acceso-en-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modificadores de acceso en UML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-datos-mas-usados-en-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de datos más usados en UML
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de datos más usados en UML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-basicos-del-propio-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos básicos del propio UML:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-tipicos-del-estilo-javakotlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos típicos del estilo Java/Kotlin:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxis-uml-para-especificar-atributos-y-metodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintaxis UML para especificar atributos y métodos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sintaxis UML para especificar atributos y métodos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atributos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atributos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métodos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagramas-completos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagramas completos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05_RelacionesUML.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Relaciones UML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1486,6 +1997,44 @@ Todos los objetos de la clase poseen los mismos atributos, pero <strong>con valo
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pie">
+        
+          
+          <a href="03_UML.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 03. Lenguaje UML">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                03. Lenguaje UML
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="05_RelacionesUML.html" class="md-footer__link md-footer__link--next" aria-label="Siguiente: 05. Relaciones UML">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Siguiente
+              </span>
+              <div class="md-ellipsis">
+                05. Relaciones UML
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
