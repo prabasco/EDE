@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduccion" class="md-skip">
+        <a href="#introduccion-a-uml-y-a-los-diagramas-de-clases" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -1403,6 +1403,111 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#que-diagrama-elegir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qué diagrama elegir
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-se-lee-un-diagrama-de-clases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo se lee un diagrama de clases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-guiado-disenar-la-clase-coche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo guiado. Diseñar la clase Coche
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo guiado. Diseñar la clase Coche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-delimitar-el-enunciado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Delimitar el enunciado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-elegir-la-clase-e-identificar-sus-atributos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Elegir la clase e identificar sus atributos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-definir-el-constructor-y-las-operaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Definir el constructor y las operaciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-dibujar-la-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Dibujar la clase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-comprobar-el-diseno-con-un-objeto-concreto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Comprobar el diseño con un objeto concreto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enlaces-de-interes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enlaces de interés
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#actividad" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1558,9 +1663,232 @@
 
 
 
-<h1 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">¶</a></h1>
-<p>Durante las etapas de análisis y diseño, se deben obtener modelos gráficos que representen la información que es necesario manejar y las operaciones que se han de realizar con dicha información. La creación de estos modelos se debe realizar siguiendo ciertas normas, siendo el estándar a nivel internacional el lenguaje UML (Unified Modeling Language).</p>
-<p>Una aplicación orientada a objetos consta de una serie de clases relacionadas entre sí, a partir de las cuales, se crean objetos que se envían mensajes. Con relación a ello, el lenguaje UML establece las normas para crear muchos tipos diferentes de diagramas, de los cuales lo más relevantes son los diagramas de clases.</p>
+<h1 id="introduccion-a-uml-y-a-los-diagramas-de-clases">Introducción a UML y a los diagramas de clases<a class="headerlink" href="#introduccion-a-uml-y-a-los-diagramas-de-clases" title="Permanent link">¶</a></h1>
+<p>UML (<em>Unified Modeling Language</em>, o lenguaje unificado de modelado) es un lenguaje visual estandarizado por el <em>Object Management Group</em> (OMG). Define símbolos y reglas para representar la estructura y el comportamiento de un sistema. Un <strong>modelo</strong> recoge los elementos y reglas relevantes del sistema. Un <strong>diagrama</strong> muestra una vista de ese modelo con el detalle necesario para entender una parte del problema.</p>
+<p>Durante el <strong>análisis</strong>, UML ayuda a identificar conceptos y reglas del dominio. Por ejemplo, en un sistema de alquiler interesa saber qué relaciona una reserva con un coche. Durante el <strong>diseño</strong>, permite concretar cómo se organizará la aplicación, qué responsabilidades tendrá cada clase y qué operaciones ofrecerá. El equipo puede revisar y ajustar los diagramas a medida que toma decisiones o cambia el código.</p>
+<h2 id="que-diagrama-elegir">Qué diagrama elegir<a class="headerlink" href="#que-diagrama-elegir" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Familia</th>
+<th>Diagrama</th>
+<th>Qué muestra</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Estructura</td>
+<td>Clases</td>
+<td>Tipos, atributos, operaciones y relaciones</td>
+<td>Un coche puede aparecer en varias reservas a lo largo del tiempo</td>
+</tr>
+<tr>
+<td>Estructura</td>
+<td>Objetos</td>
+<td>Instancias concretas y sus vínculos en un momento determinado</td>
+<td>La reserva 42 está vinculada al coche 7</td>
+</tr>
+<tr>
+<td>Comportamiento</td>
+<td>Casos de uso</td>
+<td>Objetivos de los actores al interactuar con el sistema</td>
+<td>Un cliente reserva un coche</td>
+</tr>
+<tr>
+<td>Comportamiento</td>
+<td>Actividades</td>
+<td>Pasos, decisiones y posibles recorridos de un proceso</td>
+<td>Comprobar disponibilidad antes de confirmar</td>
+</tr>
+<tr>
+<td>Comportamiento</td>
+<td>Secuencia</td>
+<td>Orden de los mensajes entre participantes de un escenario</td>
+<td>La pantalla solicita disponibilidad al servicio de reservas</td>
+</tr>
+<tr>
+<td>Comportamiento</td>
+<td>Máquina de estados</td>
+<td>Estados de un elemento y eventos que provocan transiciones</td>
+<td>Una reserva pendiente pasa a confirmada al validar el pago</td>
+</tr>
+</tbody>
+</table>
+<h2 id="como-se-lee-un-diagrama-de-clases">Cómo se lee un diagrama de clases<a class="headerlink" href="#como-se-lee-un-diagrama-de-clases" title="Permanent link">¶</a></h2>
+<p>Una <strong>clase</strong> describe las características y operaciones comunes de sus instancias. <code>Coche</code> es una clase. Un Toyota Yaris blanco y un Renault Clio rojo pueden ser dos objetos distintos de esa clase, cada uno con sus propios valores.</p>
+<p>Una clase suele representarse con un rectángulo de tres compartimentos. Arriba aparece el <strong>nombre</strong>, en medio los <strong>atributos</strong> y abajo las <strong>operaciones</strong>. Se pueden omitir compartimentos cuando ese detalle queda fuera del propósito del diagrama.</p>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th>Visibilidad UML</th>
+<th>En una clase Java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>Pública</td>
+<td><code>public</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Privada</td>
+<td><code>private</code></td>
+</tr>
+<tr>
+<td><code>#</code></td>
+<td>Protegida</td>
+<td><code>protected</code>, con las reglas de acceso de Java</td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>De paquete</td>
+<td>Sin modificador de acceso</td>
+</tr>
+</tbody>
+</table>
+<p>Un atributo se puede escribir como <code>- velocidad: int</code>. En una operación, los parámetros van entre paréntesis y el tipo de retorno, cuando se muestra, va al final. Por ejemplo, <code>+ consultarVelocidad(): int</code>.</p>
+<p>Las líneas entre clases añaden significado. Una <strong>asociación</strong> expresa un vínculo entre instancias. La <strong>generalización</strong>, con un triángulo vacío que apunta a la clase general, expresa una relación de especialización. La <strong>composición</strong>, con un rombo negro junto al todo, expresa una relación todo-parte fuerte. Cuando una asociación muestra multiplicidades, cada número indica cuántas instancias del extremo donde aparece pueden vincularse con <strong>una instancia del extremo opuesto</strong>. Por ejemplo, <code>1</code> junto a <code>Coche</code> y <code>0..*</code> junto a <code>Reserva</code> indican que cada reserva corresponde a un coche y que cada coche puede tener desde cero hasta muchas reservas.</p>
+<h2 id="ejemplo-guiado-disenar-la-clase-coche">Ejemplo guiado. Diseñar la clase Coche<a class="headerlink" href="#ejemplo-guiado-disenar-la-clase-coche" title="Permanent link">¶</a></h2>
+<h3 id="1-delimitar-el-enunciado">1. Delimitar el enunciado<a class="headerlink" href="#1-delimitar-el-enunciado" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>En una simulación sencilla, cada coche tiene marca, modelo, número de puertas y color. Empieza parado. Puede acelerar, frenar y consultar su velocidad actual. La velocidad se mide en km/h y su valor mínimo es cero.</p>
+</blockquote>
+<h3 id="2-elegir-la-clase-e-identificar-sus-atributos">2. Elegir la clase e identificar sus atributos<a class="headerlink" href="#2-elegir-la-clase-e-identificar-sus-atributos" title="Permanent link">¶</a></h3>
+<p>El concepto que reúne los datos y las acciones es <code>Coche</code>. La velocidad también es un atributo porque el objeto debe recordar su valor entre una operación y la siguiente.</p>
+<table>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Tipo</th>
+<th>Papel en el modelo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>marca</code></td>
+<td><code>String</code></td>
+<td>Fabricante del coche</td>
+</tr>
+<tr>
+<td><code>modelo</code></td>
+<td><code>String</code></td>
+<td>Modelo comercial</td>
+</tr>
+<tr>
+<td><code>puertas</code></td>
+<td><code>int</code></td>
+<td>Número de puertas</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td><code>String</code></td>
+<td>Color de la carrocería</td>
+</tr>
+<tr>
+<td><code>velocidad</code></td>
+<td><code>int</code></td>
+<td>Velocidad actual en km/h, inicialmente 0</td>
+</tr>
+</tbody>
+</table>
+<p>Todos estos atributos tienen visibilidad privada. Esta decisión permite que las operaciones de la clase controlen los cambios de velocidad.</p>
+<h3 id="3-definir-el-constructor-y-las-operaciones">3. Definir el constructor y las operaciones<a class="headerlink" href="#3-definir-el-constructor-y-las-operaciones" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Firma en el diagrama</th>
+<th>Comportamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+ Coche(marca: String, modelo: String, puertas: int, color: String)</code></td>
+<td>Crea el coche con sus datos y deja la velocidad a cero. El constructor se muestra sin tipo de retorno.</td>
+</tr>
+<tr>
+<td><code>+ acelerar(incremento: int): void</code></td>
+<td>Aumenta la velocidad en la cantidad indicada si es positiva.</td>
+</tr>
+<tr>
+<td><code>+ frenar(decremento: int): void</code></td>
+<td>Reduce la velocidad si la cantidad es positiva. Si el decremento supera la velocidad actual, el coche queda parado.</td>
+</tr>
+<tr>
+<td><code>+ consultarVelocidad(): int</code></td>
+<td>Devuelve la velocidad actual en km/h.</td>
+</tr>
+</tbody>
+</table>
+<p>En este diseño, un incremento o decremento igual o inferior a cero deja la velocidad igual. Esta regla completa el contrato de las operaciones aunque sus firmas solo indiquen nombres, tipos y visibilidad.</p>
+<h3 id="4-dibujar-la-clase">4. Dibujar la clase<a class="headerlink" href="#4-dibujar-la-clase" title="Permanent link">¶</a></h3>
+<p>El primer compartimento contiene <code>Coche</code>. Añade los atributos en el segundo y el constructor y las operaciones en el tercero. Basta una caja porque el enunciado permite resolver el ejemplo con una sola clase.</p>
+<pre class="mermaid"><code>classDiagram
+    class Coche {
+        -String marca
+        -String modelo
+        -int puertas
+        -String color
+        -int velocidad = 0
+        +Coche(String marca, String modelo, int puertas, String color)
+        +acelerar(int incremento) void
+        +frenar(int decremento) void
+        +consultarVelocidad() int
+    }</code></pre>
+<p>En este bloque, Mermaid utiliza el orden <code>tipo nombre</code> para los miembros y parámetros. En la notación UML escrita de los pasos anteriores se ha empleado <code>nombre: tipo</code>.</p>
+<h3 id="5-comprobar-el-diseno-con-un-objeto-concreto">5. Comprobar el diseño con un objeto concreto<a class="headerlink" href="#5-comprobar-el-diseno-con-un-objeto-concreto" title="Permanent link">¶</a></h3>
+<p>Imagina un objeto creado con <code>new Coche("Toyota", "Yaris", 5, "Blanco")</code>. Las operaciones de esta tabla se aplican en orden sobre ese mismo objeto.</p>
+<table>
+<thead>
+<tr>
+<th>Operación</th>
+<th>Velocidad resultante</th>
+<th>Regla comprobada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crear el coche</td>
+<td>0 km/h</td>
+<td>Estado inicial</td>
+</tr>
+<tr>
+<td><code>acelerar(30)</code></td>
+<td>30 km/h</td>
+<td>Aumento de la velocidad</td>
+</tr>
+<tr>
+<td><code>frenar(10)</code></td>
+<td>20 km/h</td>
+<td>Reducción de la velocidad</td>
+</tr>
+<tr>
+<td><code>frenar(50)</code></td>
+<td>0 km/h</td>
+<td>Límite inferior</td>
+</tr>
+<tr>
+<td><code>acelerar(-5)</code></td>
+<td>0 km/h</td>
+<td>Valor inválido</td>
+</tr>
+<tr>
+<td><code>consultarVelocidad()</code></td>
+<td>0 km/h</td>
+<td>La operación devuelve la velocidad sin modificarla</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enlaces-de-interes">Enlaces de interés<a class="headerlink" href="#enlaces-de-interes" title="Permanent link">¶</a></h2>
+<ul>
+<li>Especificación oficial de UML, con la notación y el significado de cada elemento. <a href="https://www.omg.org/spec/UML/2.5.1">OMG · UML 2.5.1</a></li>
+<li>Ejemplos de clases, relaciones y multiplicidades en español. <a href="https://plantuml.com/es/class-diagram">PlantUML · Diagramas de clases</a></li>
+<li>Referencia de la sintaxis utilizada en el ejemplo de <code>Coche</code>. <a href="https://mermaid.js.org/syntax/classDiagram.html">Mermaid · Diagramas de clases</a></li>
+<li>Editor en línea para pegar el bloque, cambiar sus miembros y ver el resultado. <a href="https://mermaid.live/">Mermaid Live Editor</a></li>
+<li>Configuración para renderizar Mermaid en la web de apuntes. <a href="https://squidfunk.github.io/mkdocs-material/reference/diagrams/">Material for MkDocs · Diagramas</a></li>
+</ul>
 <h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">¶</a></h2>
 <ul>
 <li>
