@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#paradigma-orientado-a-objetos" class="md-skip">
+        <a href="#conceptos-de-orientacion-a-objetos-en-uml" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -1431,15 +1431,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#caracteristicas-principales-de-la-programacion-orientada-a-objetos" class="md-nav__link">
+  <a href="#clase-objeto-estado-y-comportamiento" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Características principales de la Programación Orientada a Objetos
+        Clase, objeto, estado y comportamiento
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Características principales de la Programación Orientada a Objetos">
+    <nav class="md-nav" aria-label="Clase, objeto, estado y comportamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leer-una-clase-en-uml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leer una clase en UML
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principios-de-orientacion-a-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principios de orientación a objetos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Principios de orientación a objetos">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1454,10 +1482,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#encapsulamiento" class="md-nav__link">
+  <a href="#encapsulacion-y-ocultamiento-de-informacion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Encapsulamiento
+        Encapsulación y ocultamiento de información
       
     </span>
   </a>
@@ -1465,10 +1493,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#herencia" class="md-nav__link">
+  <a href="#herencia-y-generalizacion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Herencia
+        Herencia y generalización
       
     </span>
   </a>
@@ -1497,11 +1525,50 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#ocultamiento-informacion-oculta" class="md-nav__link">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relaciones-entre-objetos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ocultamiento (Información Oculta)
+        Relaciones entre objetos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orientacion-a-objetos-y-gestion-de-memoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Orientación a objetos y gestión de memoria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-java-para-practicar-los-conceptos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos Java para practicar los conceptos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos Java para practicar los conceptos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-crear-dos-objetos-y-comprobar-su-estado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Crear dos objetos y comprobar su estado
       
     </span>
   </a>
@@ -1509,10 +1576,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#recoleccion-de-basura-garbage-collection" class="md-nav__link">
+  <a href="#2-generalizacion-polimorfismo-y-asociacion-en-un-unico-programa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recolección de basura (Garbage Collection)
+        2. Generalización, polimorfismo y asociación en un único programa
       
     </span>
   </a>
@@ -1521,17 +1588,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lenguajes-orientados-a-objetos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Lenguajes orientados a objetos
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1663,95 +1719,301 @@
 
 
 
-<h1 id="paradigma-orientado-a-objetos">Paradigma Orientado a Objetos<a class="headerlink" href="#paradigma-orientado-a-objetos" title="Permanent link">¶</a></h1>
-<p>El <strong>paradigma orientado a objetos (<abbr title="Programación Orientada a Objetos">POO</abbr>)</strong> supuso un cambio profundo en la forma de desarrollar software.
-Hasta su aparición, la mayoría de los programas estaban basados en <strong>procesos o funciones</strong> (enfoque estructurado), pero la <abbr title="Programación Orientada a Objetos">POO</abbr> cambió el foco hacia los <strong>datos</strong> y <strong>entidades</strong> que intervienen en esos procesos.</p>
-<p>En este paradigma, una aplicación está formada por <strong>objetos que interactúan entre sí</strong> para llevar a cabo las tareas del sistema.
-Cada objeto es una <strong>instancia de una clase</strong>, y una clase define:</p>
-<ul>
-<li><strong>Atributos o propiedades:</strong> datos que describen el estado del objeto.</li>
-<li><strong>Métodos:</strong> acciones o comportamientos que el objeto puede realizar.</li>
-</ul>
-<p>Cuando un objeto necesita que otro ejecute una acción, le envía un <strong>mensaje</strong>, que consiste en una solicitud para que ejecute uno de sus métodos.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span>flowchart TD
-</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span>  A[Clase Persona]
-</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>  B[Objeto alumno1]
-</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span>  C[Objeto profesor1]
-</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span>  D[Sistema]
-</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span>
-</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span>  A --&gt; B
-</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span>  A --&gt; C
-</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>  B --&gt; D
-</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span>  C --&gt; D
-</span></code></pre></div>
-<h2 id="caracteristicas-principales-de-la-programacion-orientada-a-objetos">Características principales de la Programación Orientada a Objetos<a class="headerlink" href="#caracteristicas-principales-de-la-programacion-orientada-a-objetos" title="Permanent link">¶</a></h2>
-<p>Para que un lenguaje pueda considerarse <strong>orientado a objetos</strong>, debe cumplir una serie de características fundamentales (Coad y Yourdon, 1991).</p>
-<h3 id="abstraccion">Abstracción<a class="headerlink" href="#abstraccion" title="Permanent link">¶</a></h3>
-<p>La <strong>abstracción</strong> consiste en identificar las <strong>características esenciales</strong> de un conjunto de objetos, ignorando los detalles irrelevantes.
-Cada objeto funciona como una unidad independiente capaz de realizar tareas, modificar su estado y comunicarse con otros sin mostrar cómo lo hace internamente.</p>
-<h3 id="encapsulamiento">Encapsulamiento<a class="headerlink" href="#encapsulamiento" title="Permanent link">¶</a></h3>
-<p>El <strong>encapsulamiento</strong> agrupa todos los elementos relacionados (atributos y métodos) dentro de una misma entidad: la clase.
-Esto mejora la <strong>cohesión</strong> y protege los datos del acceso externo no controlado.</p>
-<h3 id="herencia">Herencia<a class="headerlink" href="#herencia" title="Permanent link">¶</a></h3>
-<p>La <strong>herencia</strong> permite que unas clases (subclases o clases hijas) <strong>hereden atributos y métodos</strong> de otras (superclases o clases padre).
-Esto facilita la reutilización del código y la creación de jerarquías.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos="1 "></span>flowchart TD
-</span><span id="__span-1-2"><span class="linenos" data-linenos="2 "></span>  V[Clase Vehículo] --&gt; C[Coche]
-</span><span id="__span-1-3"><span class="linenos" data-linenos="3 "></span>  V --&gt; M[Moto]
-</span></code></pre></div>
-<h3 id="polimorfismo">Polimorfismo<a class="headerlink" href="#polimorfismo" title="Permanent link">¶</a></h3>
-<p>El <strong>polimorfismo</strong> significa “muchas formas”.
-Permite que <strong>un mismo método</strong> tenga <strong>diferentes comportamientos</strong> según el tipo de objeto que lo invoque.</p>
-<h3 id="modularidad">Modularidad<a class="headerlink" href="#modularidad" title="Permanent link">¶</a></h3>
-<p>La <strong>modularidad</strong> consiste en dividir una aplicación en <strong>módulos o partes independientes</strong>, cada una responsable de una función específica.</p>
-<h3 id="ocultamiento-informacion-oculta">Ocultamiento (Información Oculta)<a class="headerlink" href="#ocultamiento-informacion-oculta" title="Permanent link">¶</a></h3>
-<p>El <strong>ocultamiento de información</strong> implica que cada objeto <strong>solo expone una interfaz pública</strong> para interactuar con él.
-El resto de sus datos o procesos internos permanecen ocultos.</p>
-<h3 id="recoleccion-de-basura-garbage-collection">Recolección de basura (Garbage Collection)<a class="headerlink" href="#recoleccion-de-basura-garbage-collection" title="Permanent link">¶</a></h3>
-<p>Es la técnica por la cual el entorno de ejecución <strong>libera automáticamente la memoria</strong> ocupada por los objetos que ya no se utilizan.</p>
-<h2 id="lenguajes-orientados-a-objetos">Lenguajes orientados a objetos<a class="headerlink" href="#lenguajes-orientados-a-objetos" title="Permanent link">¶</a></h2>
-<p>Un <strong>lenguaje de programación orientado a objetos (OOP)</strong> es aquel que implementa las características anteriores.</p>
+<h1 id="conceptos-de-orientacion-a-objetos-en-uml">Conceptos de orientación a objetos en UML<a class="headerlink" href="#conceptos-de-orientacion-a-objetos-en-uml" title="Permanent link">¶</a></h1>
+<p>En una aplicación orientada a objetos, los <strong>objetos</strong> colaboran para realizar tareas. Cada uno reúne datos y ofrece operaciones para trabajar con ellos. UML permite representar ese diseño mediante diagramas. En esta página usaremos una aplicación sencilla de alquiler de vehículos como ejemplo.</p>
+<h2 id="clase-objeto-estado-y-comportamiento">Clase, objeto, estado y comportamiento<a class="headerlink" href="#clase-objeto-estado-y-comportamiento" title="Permanent link">¶</a></h2>
+<p>Una <strong>clase</strong> define las características y operaciones comunes de sus instancias. Un <strong>objeto</strong> es una instancia concreta de una clase y tiene identidad propia. Dos coches pueden ser del mismo modelo y tener la misma velocidad, aunque sean dos objetos distintos.</p>
 <table>
 <thead>
 <tr>
-<th>Lenguaje |</th>
-<th>Recolección de basura |</th>
-<th>Paradigma principal |</th>
+<th>Concepto</th>
+<th>Ejemplo</th>
+<th>Cómo se interpreta</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Java |</td>
-<td>✓ Automática |</td>
-<td>Orientado a objetos |</td>
+<td>Clase</td>
+<td><code>Coche</code></td>
+<td>Define qué información guarda cada coche y qué operaciones ofrece.</td>
 </tr>
 <tr>
-<td>Python |</td>
-<td>✓ Automática |</td>
-<td>Multiparadigma |</td>
+<td>Objeto</td>
+<td><code>coche1</code></td>
+<td>Es un coche concreto creado a partir de la clase.</td>
 </tr>
 <tr>
-<td>C++ |</td>
-<td>✗ Manual |</td>
-<td>Estructurado y OOP |</td>
+<td>Atributo</td>
+<td><code>velocidad: int</code></td>
+<td>Define un dato que puede almacenar cada coche.</td>
 </tr>
 <tr>
-<td>Kotlin |</td>
-<td>✓ Automática |</td>
-<td>OOP y funcional |</td>
+<td>Estado</td>
+<td><code>velocidad = 30</code></td>
+<td>Indica el valor actual de ese atributo en un objeto.</td>
 </tr>
 <tr>
-<td>Swift |</td>
-<td>✓ Automática |</td>
-<td>OOP |</td>
+<td>Operación</td>
+<td><code>acelerar(incremento: int)</code></td>
+<td>Describe una acción disponible y el dato que necesita.</td>
 </tr>
 <tr>
-<td>JavaScript |</td>
-<td>✓ Automática |</td>
-<td>OOP basado en prototipos |</td>
+<td>Método</td>
+<td>El código que aumenta la velocidad</td>
+<td>Implementa la operación en Java.</td>
 </tr>
 </tbody>
 </table>
+<p>En Java, <code>coche1.acelerar(20)</code> es una llamada al método del objeto referenciado por <code>coche1</code>. En UML, un diagrama de secuencia puede mostrar esa llamada como un <strong>mensaje</strong> dirigido al coche. El diagrama de clases muestra que existe la operación y qué parámetros admite.</p>
+<h3 id="leer-una-clase-en-uml">Leer una clase en UML<a class="headerlink" href="#leer-una-clase-en-uml" title="Permanent link">¶</a></h3>
+<p>Un diagrama de clases suele mostrar el nombre de la clase, sus atributos y sus operaciones en tres compartimentos. En notación UML, <code>- velocidad: int</code> indica un atributo privado y <code>+ consultarVelocidad(): int</code> indica una operación pública que devuelve un entero. El bloque Mermaid representa las mismas firmas con el orden habitual en Java.</p>
+<pre class="mermaid"><code>classDiagram
+    class Coche {
+        -int velocidad
+        +acelerar(int incremento) void
+        +consultarVelocidad() int
+    }</code></pre>
+<h2 id="principios-de-orientacion-a-objetos">Principios de orientación a objetos<a class="headerlink" href="#principios-de-orientacion-a-objetos" title="Permanent link">¶</a></h2>
+<h3 id="abstraccion">Abstracción<a class="headerlink" href="#abstraccion" title="Permanent link">¶</a></h3>
+<p>Abstraer consiste en elegir el detalle que necesita el problema. En una simulación de conducción interesa la velocidad. Para calcular el precio de un alquiler pueden interesar la tarifa diaria y la duración. Cada modelo incluye los datos y operaciones necesarios para su propósito.</p>
+<h3 id="encapsulacion-y-ocultamiento-de-informacion">Encapsulación y ocultamiento de información<a class="headerlink" href="#encapsulacion-y-ocultamiento-de-informacion" title="Permanent link">¶</a></h3>
+<p>La <strong>encapsulación</strong> reúne en una clase los datos y las operaciones que trabajan con ellos. El <strong>ocultamiento de información</strong> permite reservar las decisiones internas de esa clase y ofrecer una interfaz para usarla. En <code>Coche</code>, la velocidad es privada y se consulta mediante una operación pública. El método <code>acelerar</code> controla si el incremento es válido.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Coche</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">velocidad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-0-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">acelerar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">incremento</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">incremento</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">incremento</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">MAX_VALUE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">velocidad</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">            </span><span class="n">velocidad</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">incremento</span><span class="p">;</span>
+</span><span id="__span-0-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-0-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">consultarVelocidad</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">velocidad</span><span class="p">;</span>
+</span><span id="__span-0-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-13"><span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Tras llamar a <code>acelerar(20)</code>, la velocidad pasa de 0 a 20 km/h. Si después se llama a <code>acelerar(-5)</code>, permanece en 20 km/h. La segunda condición comprueba que la suma cabe en un <code>int</code>.</p>
+<h3 id="herencia-y-generalizacion">Herencia y generalización<a class="headerlink" href="#herencia-y-generalizacion" title="Permanent link">¶</a></h3>
+<p>Si <code>Coche</code> y <code>Moto</code> son tipos de <code>Vehiculo</code>, el modelo puede reunir en <code>Vehiculo</code> las características comunes. UML llama <strong>generalización</strong> a esta relación y la representa con un triángulo vacío que apunta al tipo general. En Java, se expresa con <code>extends</code>. Los miembros privados de la superclase se manipulan desde esta o mediante las operaciones que expone.</p>
+<h3 id="polimorfismo">Polimorfismo<a class="headerlink" href="#polimorfismo" title="Permanent link">¶</a></h3>
+<p>Una variable de tipo <code>Vehiculo</code> puede referirse a un <code>Coche</code> o a una <code>Moto</code>. Si ambas clases redefinen la operación <code>calcularTarifaDiaria()</code>, Java ejecuta el método correspondiente al tipo real del objeto. Por ejemplo, con <code>Vehiculo vehiculo = new Moto("5678 DEF");</code>, la llamada <code>vehiculo.calcularTarifaDiaria()</code> ejecuta el método de <code>Moto</code>.</p>
+<p>El siguiente diagrama muestra esa jerarquía. Se representa únicamente la operación que interesa para explicar la tarifa. La unidad del importe en este ejemplo es el céntimo de euro.</p>
+<pre class="mermaid"><code>classDiagram
+    class Vehiculo {
+        &lt;&lt;abstract&gt;&gt;
+        +calcularTarifaDiaria() int
+    }
+    class Coche {
+        +calcularTarifaDiaria() int
+    }
+    class Moto {
+        +calcularTarifaDiaria() int
+    }
+    Vehiculo &lt;|-- Coche
+    Vehiculo &lt;|-- Moto</code></pre>
+<h3 id="modularidad">Modularidad<a class="headerlink" href="#modularidad" title="Permanent link">¶</a></h3>
+<p>La modularidad organiza la aplicación en partes con responsabilidades concretas. Por ejemplo, un paquete puede contener el modelo de vehículos y otro las funciones de reserva. En UML, un diagrama de paquetes permite mostrar esa organización y las dependencias entre paquetes.</p>
+<h2 id="relaciones-entre-objetos">Relaciones entre objetos<a class="headerlink" href="#relaciones-entre-objetos" title="Permanent link">¶</a></h2>
+<p>Una <strong>asociación</strong> indica que los objetos de una clase pueden estar vinculados con objetos de otra. En un historial de alquileres, cada reserva corresponde a un vehículo. Un mismo vehículo puede aparecer en varias reservas a lo largo del tiempo.</p>
+<pre class="mermaid"><code>classDiagram
+    Reserva "0..*" -- "1" Vehiculo : corresponde a</code></pre>
+<table>
+<thead>
+<tr>
+<th>Extremo</th>
+<th>Multiplicidad</th>
+<th>Lectura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Vehiculo</code></td>
+<td><code>1</code></td>
+<td>Cada reserva tiene exactamente un vehículo.</td>
+</tr>
+<tr>
+<td><code>Reserva</code></td>
+<td><code>0..*</code></td>
+<td>Cada vehículo puede tener cero, una o varias reservas en el historial.</td>
+</tr>
+</tbody>
+</table>
+<p>Las multiplicidades describen cuántos objetos pueden estar vinculados. Si el sistema exige que dos reservas de un mismo vehículo no se solapen, esa regla debe documentarse aparte.</p>
+<h2 id="orientacion-a-objetos-y-gestion-de-memoria">Orientación a objetos y gestión de memoria<a class="headerlink" href="#orientacion-a-objetos-y-gestion-de-memoria" title="Permanent link">¶</a></h2>
+<p>La orientación a objetos se puede combinar con otros paradigmas. La gestión de memoria es una característica del lenguaje y de su entorno de ejecución. Por ejemplo, en Java, el recolector de basura puede recuperar memoria cuando los objetos dejan de ser alcanzables. En C++ es habitual gestionar la vida de los recursos mediante <strong>RAII</strong>, ligándola a la vida de los objetos, y utilizar punteros inteligentes cuando se necesita gestionar propiedad dinámica.</p>
+<table>
+<thead>
+<tr>
+<th>Lenguaje</th>
+<th>Uso de la orientación a objetos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java</td>
+<td>Clases, interfaces y herencia de clases.</td>
+</tr>
+<tr>
+<td>Kotlin</td>
+<td>Clases e interfaces junto con programación funcional.</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Clases y objetos junto con otros estilos de programación.</td>
+</tr>
+<tr>
+<td>C++</td>
+<td>Clases y polimorfismo junto con programación genérica y procedural.</td>
+</tr>
+<tr>
+<td>Swift</td>
+<td>Clases, tipos por valor y programación orientada a protocolos.</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>Objetos con herencia basada en prototipos y sintaxis de clases.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ejemplos-java-para-practicar-los-conceptos">Ejemplos Java para practicar los conceptos<a class="headerlink" href="#ejemplos-java-para-practicar-los-conceptos" title="Permanent link">¶</a></h2>
+<h3 id="1-crear-dos-objetos-y-comprobar-su-estado">1. Crear dos objetos y comprobar su estado<a class="headerlink" href="#1-crear-dos-objetos-y-comprobar-su-estado" title="Permanent link">¶</a></h3>
+<p>Guarda la clase <code>Coche</code> del apartado de encapsulación en <code>Coche.java</code>. En la misma carpeta, crea <code>PruebaCoche.java</code>.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PruebaCoche</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="n">Coche</span><span class="w"> </span><span class="n">coche1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coche</span><span class="p">();</span>
+</span><span id="__span-1-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">        </span><span class="n">Coche</span><span class="w"> </span><span class="n">coche2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coche</span><span class="p">();</span>
+</span><span id="__span-1-5"><span class="linenos" data-linenos=" 5 "></span>
+</span><span id="__span-1-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="n">coche1</span><span class="p">.</span><span class="na">acelerar</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span><span id="__span-1-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">        </span><span class="n">coche2</span><span class="p">.</span><span class="na">acelerar</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span><span id="__span-1-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="n">coche1</span><span class="p">.</span><span class="na">acelerar</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">);</span>
+</span><span id="__span-1-9"><span class="linenos" data-linenos=" 9 "></span>
+</span><span id="__span-1-10"><span class="linenos" data-linenos="10 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Coche 1: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">coche1</span><span class="p">.</span><span class="na">consultarVelocidad</span><span class="p">());</span>
+</span><span id="__span-1-11"><span class="linenos" data-linenos="11 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Coche 2: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">coche2</span><span class="p">.</span><span class="na">consultarVelocidad</span><span class="p">());</span>
+</span><span id="__span-1-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-13"><span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+</span></code></pre></div>
+<p>Salida esperada:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><span class="linenos" data-linenos="1 "></span>Coche 1: 30
+</span><span id="__span-2-2"><span class="linenos" data-linenos="2 "></span>Coche 2: 10
+</span></code></pre></div>
+<p>Cada llamada a <code>new Coche()</code> crea una instancia con su propia velocidad. El incremento negativo deja intacto el estado de <code>coche1</code>. La expresión <code>coche1.velocidad</code> provocaría un error de compilación en <code>PruebaCoche</code> porque el atributo es privado.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><span class="linenos" data-linenos="1 "></span>javac<span class="w"> </span>Coche.java<span class="w"> </span>PruebaCoche.java
+</span><span id="__span-3-2"><span class="linenos" data-linenos="2 "></span>java<span class="w"> </span>PruebaCoche
+</span></code></pre></div>
+<h3 id="2-generalizacion-polimorfismo-y-asociacion-en-un-unico-programa">2. Generalización, polimorfismo y asociación en un único programa<a class="headerlink" href="#2-generalizacion-polimorfismo-y-asociacion-en-un-unico-programa" title="Permanent link">¶</a></h3>
+<p>Crea <code>DemoAlquiler.java</code> en una carpeta distinta de la del ejemplo anterior. Aquí la clase <code>Coche</code> pertenece al modelo de alquiler y calcula una tarifa diaria. El fichero reúne las clases para poder ejecutar el ejemplo directamente.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><span class="linenos" data-linenos=" 1 "></span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Vehiculo</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">matricula</span><span class="p">;</span>
+</span><span id="__span-4-3"><span class="linenos" data-linenos=" 3 "></span>
+</span><span id="__span-4-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="n">Vehiculo</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">matricula</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">matricula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matricula</span><span class="p">;</span>
+</span><span id="__span-4-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-7"><span class="linenos" data-linenos=" 7 "></span>
+</span><span id="__span-4-8"><span class="linenos" data-linenos=" 8 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">consultarMatricula</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-9"><span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">matricula</span><span class="p">;</span>
+</span><span id="__span-4-10"><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-11"><span class="linenos" data-linenos="11 "></span>
+</span><span id="__span-4-12"><span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">calcularTarifaDiaria</span><span class="p">();</span>
+</span><span id="__span-4-13"><span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+</span><span id="__span-4-14"><span class="linenos" data-linenos="14 "></span>
+</span><span id="__span-4-15"><span class="linenos" data-linenos="15 "></span><span class="kd">class</span> <span class="nc">Coche</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehiculo</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-16"><span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="n">Coche</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">matricula</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-17"><span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">matricula</span><span class="p">);</span>
+</span><span id="__span-4-18"><span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-19"><span class="linenos" data-linenos="19 "></span>
+</span><span id="__span-4-20"><span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-4-21"><span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">calcularTarifaDiaria</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-22"><span class="linenos" data-linenos="22 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">4500</span><span class="p">;</span>
+</span><span id="__span-4-23"><span class="linenos" data-linenos="23 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-24"><span class="linenos" data-linenos="24 "></span><span class="p">}</span>
+</span><span id="__span-4-25"><span class="linenos" data-linenos="25 "></span>
+</span><span id="__span-4-26"><span class="linenos" data-linenos="26 "></span><span class="kd">class</span> <span class="nc">Moto</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Vehiculo</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-27"><span class="linenos" data-linenos="27 "></span><span class="w">    </span><span class="n">Moto</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">matricula</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-28"><span class="linenos" data-linenos="28 "></span><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">matricula</span><span class="p">);</span>
+</span><span id="__span-4-29"><span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-30"><span class="linenos" data-linenos="30 "></span>
+</span><span id="__span-4-31"><span class="linenos" data-linenos="31 "></span><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-4-32"><span class="linenos" data-linenos="32 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">calcularTarifaDiaria</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-33"><span class="linenos" data-linenos="33 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">2500</span><span class="p">;</span>
+</span><span id="__span-4-34"><span class="linenos" data-linenos="34 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-35"><span class="linenos" data-linenos="35 "></span><span class="p">}</span>
+</span><span id="__span-4-36"><span class="linenos" data-linenos="36 "></span>
+</span><span id="__span-4-37"><span class="linenos" data-linenos="37 "></span><span class="kd">class</span> <span class="nc">Reserva</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-38"><span class="linenos" data-linenos="38 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Vehiculo</span><span class="w"> </span><span class="n">vehiculo</span><span class="p">;</span>
+</span><span id="__span-4-39"><span class="linenos" data-linenos="39 "></span><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dias</span><span class="p">;</span>
+</span><span id="__span-4-40"><span class="linenos" data-linenos="40 "></span>
+</span><span id="__span-4-41"><span class="linenos" data-linenos="41 "></span><span class="w">    </span><span class="n">Reserva</span><span class="p">(</span><span class="n">Vehiculo</span><span class="w"> </span><span class="n">vehiculo</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">dias</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-42"><span class="linenos" data-linenos="42 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">vehiculo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">dias</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">dias</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-43"><span class="linenos" data-linenos="43 "></span><span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span>
+</span><span id="__span-4-44"><span class="linenos" data-linenos="44 "></span><span class="w">                    </span><span class="s">"La reserva requiere un vehículo y una duración de 1 a 30 días"</span><span class="p">);</span>
+</span><span id="__span-4-45"><span class="linenos" data-linenos="45 "></span><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-4-46"><span class="linenos" data-linenos="46 "></span>
+</span><span id="__span-4-47"><span class="linenos" data-linenos="47 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">vehiculo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vehiculo</span><span class="p">;</span>
+</span><span id="__span-4-48"><span class="linenos" data-linenos="48 "></span><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">dias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dias</span><span class="p">;</span>
+</span><span id="__span-4-49"><span class="linenos" data-linenos="49 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-50"><span class="linenos" data-linenos="50 "></span>
+</span><span id="__span-4-51"><span class="linenos" data-linenos="51 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">calcularImporte</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-52"><span class="linenos" data-linenos="52 "></span><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dias</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">vehiculo</span><span class="p">.</span><span class="na">calcularTarifaDiaria</span><span class="p">();</span>
+</span><span id="__span-4-53"><span class="linenos" data-linenos="53 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-54"><span class="linenos" data-linenos="54 "></span><span class="p">}</span>
+</span><span id="__span-4-55"><span class="linenos" data-linenos="55 "></span>
+</span><span id="__span-4-56"><span class="linenos" data-linenos="56 "></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">DemoAlquiler</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-57"><span class="linenos" data-linenos="57 "></span><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-58"><span class="linenos" data-linenos="58 "></span><span class="w">        </span><span class="n">Vehiculo</span><span class="w"> </span><span class="n">coche</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Coche</span><span class="p">(</span><span class="s">"1234 ABC"</span><span class="p">);</span>
+</span><span id="__span-4-59"><span class="linenos" data-linenos="59 "></span><span class="w">        </span><span class="n">Vehiculo</span><span class="w"> </span><span class="n">moto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Moto</span><span class="p">(</span><span class="s">"5678 DEF"</span><span class="p">);</span>
+</span><span id="__span-4-60"><span class="linenos" data-linenos="60 "></span>
+</span><span id="__span-4-61"><span class="linenos" data-linenos="61 "></span><span class="w">        </span><span class="n">Reserva</span><span class="w"> </span><span class="n">reservaCoche</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Reserva</span><span class="p">(</span><span class="n">coche</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+</span><span id="__span-4-62"><span class="linenos" data-linenos="62 "></span><span class="w">        </span><span class="n">Reserva</span><span class="w"> </span><span class="n">reservaMoto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Reserva</span><span class="p">(</span><span class="n">moto</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+</span><span id="__span-4-63"><span class="linenos" data-linenos="63 "></span>
+</span><span id="__span-4-64"><span class="linenos" data-linenos="64 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">coche</span><span class="p">.</span><span class="na">consultarMatricula</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": "</span>
+</span><span id="__span-4-65"><span class="linenos" data-linenos="65 "></span><span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="n">reservaCoche</span><span class="p">.</span><span class="na">calcularImporte</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" céntimos"</span><span class="p">);</span>
+</span><span id="__span-4-66"><span class="linenos" data-linenos="66 "></span><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">moto</span><span class="p">.</span><span class="na">consultarMatricula</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">": "</span>
+</span><span id="__span-4-67"><span class="linenos" data-linenos="67 "></span><span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="n">reservaMoto</span><span class="p">.</span><span class="na">calcularImporte</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" céntimos"</span><span class="p">);</span>
+</span><span id="__span-4-68"><span class="linenos" data-linenos="68 "></span><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-69"><span class="linenos" data-linenos="69 "></span><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><span class="linenos" data-linenos="1 "></span>javac<span class="w"> </span>DemoAlquiler.java
+</span><span id="__span-5-2"><span class="linenos" data-linenos="2 "></span>java<span class="w"> </span>DemoAlquiler
+</span></code></pre></div>
+<p>Salida esperada:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><span class="linenos" data-linenos="1 "></span>1234 ABC: 9000 céntimos
+</span><span id="__span-6-2"><span class="linenos" data-linenos="2 "></span>5678 DEF: 5000 céntimos
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Concepto</th>
+<th>Dónde se ve en Java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abstracción</td>
+<td><code>Vehiculo</code> recoge la matrícula y define la operación común para calcular la tarifa.</td>
+</tr>
+<tr>
+<td>Encapsulación</td>
+<td>Cada clase guarda sus atributos como privados. El constructor de <code>Reserva</code> comprueba las condiciones antes de guardar los datos.</td>
+</tr>
+<tr>
+<td>Generalización</td>
+<td><code>extends Vehiculo</code> corresponde a la flecha cuyo triángulo apunta a <code>Vehiculo</code>. Ambas subclases pueden usar <code>consultarMatricula()</code>.</td>
+</tr>
+<tr>
+<td>Polimorfismo</td>
+<td><code>Reserva</code> usa la misma llamada a <code>calcularTarifaDiaria()</code> para ambos vehículos. Java ejecuta la implementación de la clase real del objeto.</td>
+</tr>
+<tr>
+<td>Asociación</td>
+<td>El atributo <code>vehiculo</code> representa el vínculo desde una reserva a su vehículo. El constructor exige un vehículo y varias reservas pueden guardar la misma referencia.</td>
+</tr>
+<tr>
+<td>Modularidad</td>
+<td><code>Vehiculo</code> y sus subclases definen tarifas, mientras que <code>Reserva</code> calcula el importe según la duración.</td>
+</tr>
+</tbody>
+</table>
+<p>Para comprobar la multiplicidad <code>0..*</code>, añade <code>Reserva otraReserva = new Reserva(coche, 3);</code> al método <code>main</code> y muestra su importe. Las dos reservas del coche guardan la misma referencia, pero tienen duraciones y totales propios. La nueva reserva devuelve 13 500 céntimos.</p>
 <h2 id="actividad">Actividad<a class="headerlink" href="#actividad" title="Permanent link">¶</a></h2>
 <ul>
 <li><strong>AC402</strong> (<abbr title="Realiza operaciones de entrada y salida de información, utilizando procedimientos específicos del lenguaje y librerías de clases.">RA5</abbr> / / <abbr title="Escala de valores.">IC1</abbr> / 1p). A partir de una posible implementación de una <strong>aplicación de biblioteca del centro</strong>, genera los objetos necesarios para su correcto funcionamiento.</li>
