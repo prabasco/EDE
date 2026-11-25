@@ -1795,6 +1795,29 @@
 <p>Tras llamar a <code>acelerar(20)</code>, la velocidad pasa de 0 a 20 km/h. Si después se llama a <code>acelerar(-5)</code>, permanece en 20 km/h. La segunda condición comprueba que la suma cabe en un <code>int</code>.</p>
 <h3 id="herencia-y-generalizacion">Herencia y generalización<a class="headerlink" href="#herencia-y-generalizacion" title="Permanent link">¶</a></h3>
 <p>Si <code>Coche</code> y <code>Moto</code> son tipos de <code>Vehiculo</code>, el modelo puede reunir en <code>Vehiculo</code> las características comunes. UML llama <strong>generalización</strong> a esta relación y la representa con un triángulo vacío que apunta al tipo general. En Java, se expresa con <code>extends</code>. Los miembros privados de la superclase se manipulan desde esta o mediante las operaciones que expone.</p>
+<pre class="mermaid"><code>classDiagram
+    Vehiculo &lt;|-- Auto
+    Vehiculo &lt;|-- Moto
+    Vehiculo &lt;|-- Camion
+
+    class Vehiculo {
+        +String marca
+        +String modelo
+        +acelerar()
+        +frenar()
+    }
+    class Auto {
+        +Int numeroPuertas
+        +abrirMaletero()
+    }
+    class Moto {
+        +String tipoCasco
+        +acelerar()
+    }
+    class Camion {
+        +Double capacidadCarga
+        +descargar()
+    }</code></pre>
 <h3 id="polimorfismo">Polimorfismo<a class="headerlink" href="#polimorfismo" title="Permanent link">¶</a></h3>
 <p>Una variable de tipo <code>Vehiculo</code> puede referirse a un <code>Coche</code> o a una <code>Moto</code>. Si ambas clases redefinen la operación <code>calcularTarifaDiaria()</code>, Java ejecuta el método correspondiente al tipo real del objeto. Por ejemplo, con <code>Vehiculo vehiculo = new Moto("5678 DEF");</code>, la llamada <code>vehiculo.calcularTarifaDiaria()</code> ejecuta el método de <code>Moto</code>.</p>
 <p>El siguiente diagrama muestra esa jerarquía. Se representa únicamente la operación que interesa para explicar la tarifa. La unidad del importe en este ejemplo es el céntimo de euro.</p>
